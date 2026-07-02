@@ -1,0 +1,566 @@
+﻿<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>8 Point | Industrial Engineering &amp; Logistics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LeH1yYtAAAAAIStBJ7QE0rXiMXY9A4iQVV4RdJn"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        /* Custom scrollbar for industrial feel */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #0f172a; }
+        
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(15, 23, 42, 0.1);
+        }
+        
+        .industrial-grid {
+            background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .industrial-cut {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(200, 16, 46, 0.1);
+            border-color: #c8102e;
+        }
+
+        /* Entrance Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+        .hover-scale {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+
+        /* Animation class for scroll-triggered elements */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "primary": "#c8102e",
+                "on-primary": "#ffffff",
+                "primary-container": "#c8102e",
+                "on-primary-container": "#ffffff",
+                "background": "#ffffff",
+                "on-background": "#0f172a",
+                "surface": "#f8fafc",
+                "on-surface": "#0f172a",
+                "surface-variant": "#e2e8f0",
+                "on-surface-variant": "#475569",
+                "outline": "#cbd5e1",
+                "outline-variant": "#e2e8f0",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#f8fafc",
+                "surface-container": "#f1f5f9",
+                "surface-container-high": "#e2e8f0",
+                "surface-container-highest": "#f8fafc",
+                "deep-navy": "#0f172a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "base": "8px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "label-sm": ["JetBrains Mono"],
+                      "label-md": ["JetBrains Mono"],
+                      "headline-xl": ["Barlow Condensed"],
+                      "headline-md": ["Barlow Condensed"],
+                      "label-caps": ["Barlow Condensed"],
+                      "headline-lg": ["Barlow Condensed"],
+                      "headline-lg-mobile": ["Barlow Condensed"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Barlow Condensed"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                      "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "800"}],
+                      "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                      "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] transition-all duration-300" id="site-header">
+<nav class="flex justify-between items-center w-full h-20 px-4 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt5CzQbmQFOOmy15eE8sGbPyVUpIklQbjt3dcGbmFrbxsEJmdJhHG3JvwRhT0ZEs6YyTHPigwzZ9dWmuJoVGOD4KOYvm7d2ndU2U-LQPZBsqd2cx74Xp46yN27hFFhWFs-xRCHKSgaklNy-bYrWkrgK_M1GDvTYhabfFBReKnaann1_wqt8RZCzAIDoKNh2xllG7tgOn7CFS963hVf83pTbcTHIUZp8mti6r4oJQ3hSaNERvtMFBm_VjFyp0Wetpi6K7fZzkDNNdU">
+<a href="index.html"><span class="text-2xl font-extrabold tracking-tight text-[#0f172a] uppercase" style="font-family:'Barlow Condensed',sans-serif;">8 POINT</span></a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a data-page="index.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="index.html">Home</a>
+<a data-page="about.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="about.html">About</a>
+<a data-page="services.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="services.html">Services</a>
+<a data-page="projects.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="projects.html">Projects</a>
+<a data-page="certifications.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="certifications.html">Certifications</a>
+<a data-page="contact.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-3">
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#0f172a]" aria-label="Open menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+<a href="request-quote.html" class="bg-[#c8102e] text-white text-sm font-bold px-6 py-2.5 uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);font-family:'Barlow Condensed',sans-serif;">REQUEST QUOTE</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#e2e8f0] px-4 py-4 space-y-3 shadow-lg">
+<a href="index.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Home</a>
+<a href="about.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">About</a>
+<a href="services.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Services</a>
+<a href="projects.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Projects</a>
+<a href="certifications.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Certifications</a>
+<a href="contact.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Contact Us</a>
+<a href="request-quote.html" class="block text-sm font-bold text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Request Quote</a>
+</div>
+</header>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A sprawling panoramic shot of a high-tech industrial manufacturing facility at dawn. The scene features massive steel structures, clean-room machinery, and robotic arms under cool morning light. The color palette is dominated by navy blues and slate greys, with occasional sharp red safety markers. The mood is powerful, precise, and professional, reflecting a modern industrial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Yf5XR3xpmUn1a8TN_xHFd08jpjVD0GK6gt4cl7zdZ0KnPbjlx4dyORHIgQ8aZXPLANpzZEAy01xDQ5uDDQD86W49QwzN5zB7euBb9Vfpk0xznIcphIEhcLdb-NdjpeG3hdUoXPpLqxEFbyIpMQVec8hfETBWP83rW-jYwbgW2uLxndy6h6D8gH7T3dbvVC-UoBQdtgaaJUADINIzvhjqYsTJuukmU1cxtyAGSOZZTWcLBT4j6Hx6kBC6uEW88E0Pm8weoEcctMo">
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
+<div class="absolute inset-0 industrial-grid opacity-30 z-10"></div>
+</div>
+<div class="relative z-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<div class="space-y-base flex flex-col justify-center">
+<div class="inline-flex items-center gap-3 bg-white border-l-4 border-primary px-4 py-2 w-fit mb-6 shadow-sm animate-fade-in-up">
+<span class="material-symbols-outlined text-primary text-[20px]">precision_manufacturing</span>
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">ESTABLISHED INDUSTRIAL EXCELLENCE</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-deep-navy uppercase leading-none animate-fade-in-up delay-100">
+                    PRECISION ENGINEERING FOR THE <span class="text-primary">INDUSTRIAL FRONTIER.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg pb-10 border-l-2 border-primary pl-6 mt-6 animate-fade-in-up delay-200">
+                    8 Point provides high-capacity logistics, custom fabrication, and mission-critical engineering solutions for heavy industry worldwide.
+                </p>
+<div class="flex flex-wrap gap-4 animate-fade-in-up delay-300">
+<a href="services.html" class="inline-flex bg-deep-navy text-on-primary font-label-caps text-label-caps h-14 px-10 items-center gap-2 industrial-cut hover:bg-primary transition-all uppercase tracking-widest hover-scale">
+                        EXPLORE SERVICES <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a href="projects.html" class="inline-flex border border-outline bg-white text-deep-navy font-label-caps text-label-caps h-14 px-10 items-center gap-2 hover:bg-surface-container transition-all uppercase tracking-widest hover-scale">
+                        OUR PROJECTS
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Counter Section -->
+<section class="bg-deep-navy py-16 text-on-primary reveal">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="text-center md:text-left">
+<p class="font-display-lg text-headline-lg mb-1">500+</p>
+<p class="font-label-caps text-label-caps opacity-60 tracking-widest">PROJECTS COMPLETED</p>
+</div>
+<div class="text-center md:text-left border-l-0 md:border-l border-on-primary/10 md:pl-8">
+<p class="font-display-lg text-headline-lg mb-1">24/7</p>
+<p class="font-label-caps text-label-caps opacity-60 tracking-widest">TECHNICAL SUPPORT</p>
+</div>
+<div class="text-center md:text-left border-l-0 lg:border-l border-on-primary/10 lg:pl-8">
+<p class="font-display-lg text-headline-lg mb-1">15+</p>
+<p class="font-label-caps text-label-caps opacity-60 tracking-widest">GLOBAL LOCATIONS</p>
+</div>
+<div class="text-center md:text-left border-l-0 lg:border-l border-on-primary/10 lg:pl-8">
+<p class="font-display-lg text-headline-lg mb-1">ISO 9001</p>
+<p class="font-label-caps text-label-caps opacity-60 tracking-widest">CERTIFIED QUALITY</p>
+</div>
+</div>
+</section>
+<!-- Built on Experience Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-white reveal">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="border border-outline p-3 shadow-xl industrial-cut bg-surface">
+<img class="w-full h-auto object-cover filter grayscale hover:grayscale-0 transition-all duration-700" data-alt="A close-up, high-contrast shot of an experienced industrial engineer in a navy jumpsuit, wearing a safety helmet and protective goggles. They are meticulously inspecting a complex manifold system in a brightly lit, modern plant. The lighting is sharp, creating deep shadows and bright highlights on the steel surfaces. The overall tone is gritty yet clean, emphasizing expertise and industrial reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU9Vr3lFJMxq8DGNBKcF4locC0L2RL50UL9clyMTMeMEUyKBKMR6g4uJHWUadS_QGfK85R0frM0kmnIzi5p0WL9Tmja2y4ycoJ8hHQRKd97Dm_cafB0IhmuDXVUKXFMLEFlwwb5_9Fly9UsvYoahdkLSLOxSeRcBbnFPxXYI2cFCwPiSquTib13bT1oj6jWVhm0Nz-IwvOnTVKDa3t6RtJ1viJiXfa-5XoAQ23GCmmVWvZX-NFn0Y_5X3AUKOx-juC4j1VhK1Ry_A">
+</div>
+<div class="absolute bottom-8 right-8 bg-primary text-on-primary p-8 industrial-cut shadow-xl max-w-[240px]">
+<p class="font-headline-md text-headline-md mb-2 leading-none">25 YEARS</p>
+<p class="font-label-caps text-label-caps leading-snug tracking-widest">OF UNINTERRUPTED INDUSTRIAL SERVICE</p>
+</div>
+</div>
+<div class="space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy uppercase leading-tight">Built on Experience, <br>Driven by <span class="text-primary">Precision</span></h2>
+<div class="w-20 h-1.5 bg-primary"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Since our inception, 8 Point has been the backbone of critical industrial operations. We understand that in the heavy industry sector, a single point of failure can disrupt global supply chains.
+                </p>
+<div class="space-y-6 pt-4">
+<div class="flex items-start gap-6 group reveal">
+<div class="w-12 h-12 flex items-center justify-center bg-surface border border-outline group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-deep-navy mb-1 tracking-widest uppercase font-bold">RIGOROUS SAFETY STANDARDS</h4>
+<p class="text-on-surface-variant text-sm">Every project adheres to international safety protocols with zero-incident goals.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group border-t border-outline-variant pt-6 reveal">
+<div class="w-12 h-12 flex items-center justify-center bg-surface border border-outline group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary">engineering</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-deep-navy mb-1 tracking-widest uppercase font-bold">ADVANCED FABRICATION</h4>
+<p class="text-on-surface-variant text-sm">State-of-the-art CNC and plasma cutting facilities for millimeter precision.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Portfolio Section -->
+<section class="bg-white py-12 reveal">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="relative h-[500px] overflow-hidden group industrial-cut">
+<img alt="Precision Jacketing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLtUL7UHRp4HP_oaFcYk21CZFPfQokRl18cao-J-1xrVNuG8NuDJubQ-Nr26VbbXXUalUY8u_qufAFohmOnfAjJQZB7olg44UErtFVE6eSe0Bo120rUcrkVZK5G-Wo-DHZdXGN8pnma4L-ac50b2ZQYbm9-GALfHMVGzxiVOPl9TZAqHCt-RlHvuRU_u0fzHy8iWvVGamPfpDhFaVSkTN5vMiuud3E5VrjABuH3cdiYbp0wsir1sBgBlw8o">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<p class="font-label-caps text-label-sm text-primary mb-2 tracking-widest uppercase font-bold">ADVANCED MATERIAL</p>
+<h3 class="font-headline-md text-headline-md text-white uppercase">Precision Jacketing</h3>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative h-[500px] overflow-hidden group industrial-cut">
+<img alt="Offshore Expertise" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLsBG7eT1gsFL7WMXwA1YjhVr6mEUb3MIC3uMe7LPy79CGh1QAvxmiDiDaaWw_lL9OVZHea_WvXkUBDPxVX71NlrpeYPuYsCuyCEwQbSj8a-2E2xJvE0whISEUe4nc6oujBHUG4sFA4fvErwQZCabOKZDGwwypLw70SDz_kmsDQo9SisjGtAswLjbPg_qhme-VEPrP9u2cbrvPukmUEIXM7ZMpLaF-9FFSywoqEdX_RmZCRR-PJe_qqdIY0">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<p class="font-label-caps text-label-sm text-primary mb-2 tracking-widest uppercase font-bold">GLOBAL REACH</p>
+<h3 class="font-headline-md text-headline-md text-white uppercase">Offshore Expertise</h3>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative h-[500px] overflow-hidden group industrial-cut">
+<img alt="Quality Fabrication" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLt1S3e0DJ8SYU0Gfi4UNuVF8Ge7VHSDLkoGBShpQZZuulVp33phkNVNbRMTv4n1htJN9qHA3s6i-Ap1jP5tpPhxIK_hdcOljOd2MedYZMkDuz8RSHe6i9BIc6PlfOqdAnDrf2b6bFWGxbBFMKwxRPq02GDrdY-9qsDKP_wwyEPwWX48kwO7YmlWmydPpydUTjseLHwBiAVBSAbL1NzgcM1RBZsuXdOb-Sosyw6Xtr3zALdA2vxuvTFFckY">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<p class="font-label-caps text-label-sm text-primary mb-2 tracking-widest uppercase font-bold">TECHNICAL SKILL</p>
+<h3 class="font-headline-md text-headline-md text-white uppercase">Quality Fabrication</h3>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="relative h-[500px] overflow-hidden group industrial-cut">
+<img alt="Drydock Solutions" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLtjilcLtLj9XOZ5TJ4s1v89cWdVSYP1a_g3rs4zibWzX0V4x4vtPzlkqknz7Ylz6LdyGC0pNG962lUNN4cf-pY8P6kI-vDv4loG-McqplMYR1OIs874qFM1aRC7JAMz10DASjgtSZMgVVlw51FutyQ0HcTurGEehmnHQhYGVVFvqgW3JfCwuEiTWP-cTw4IriMH03Z2iw-fuO1XZ4Ef5B04BA89eGOPgahQbEVABSN83h_BMNdaXB-Rzlo">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<p class="font-label-caps text-label-sm text-primary mb-2 tracking-widest uppercase font-bold">FLEET SUPPORT</p>
+<h3 class="font-headline-md text-headline-md text-white uppercase">Drydock Solutions</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Competencies -->
+<section class="py-24 bg-surface-container-low border-t border-b border-outline-variant reveal">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16 space-y-2">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy uppercase">CORE COMPETENCIES</h2>
+<p class="font-label-caps text-label-caps text-primary tracking-[0.3em] font-bold uppercase">THE ARCHITECTURE OF INDUSTRY</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-white border border-outline-variant p-10 industrial-cut glow-hover transition-all group reveal delay-100">
+<span class="material-symbols-outlined text-5xl text-primary mb-8" data-icon="factory">factory</span>
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-4 uppercase group-hover:text-primary transition-colors">Heavy Fabrication</h3>
+<p class="text-on-surface-variant mb-8 font-body-md">Custom structural steel components engineered for maximum durability and load-bearing capacity.</p>
+<a class="font-label-caps text-label-caps text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all tracking-widest font-bold uppercase" href="#">TECHNICAL DATA <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-outline-variant p-10 industrial-cut glow-hover transition-all group reveal delay-200">
+<span class="material-symbols-outlined text-5xl text-primary mb-8" data-icon="terminal">terminal</span>
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-4 uppercase group-hover:text-primary transition-colors">Terminal Operations</h3>
+<p class="text-on-surface-variant mb-8 font-body-md">End-to-end logistics and terminal management for liquid, bulk, and break-bulk commodities.</p>
+<a class="font-label-caps text-label-caps text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all tracking-widest font-bold uppercase" href="#">VIEW FACILITIES <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-outline-variant p-10 industrial-cut glow-hover transition-all group border-t-4 border-t-primary reveal delay-300">
+<span class="material-symbols-outlined text-5xl text-primary mb-8" data-icon="shield">shield</span>
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-4 uppercase group-hover:text-primary transition-colors">Asset Integrity</h3>
+<p class="text-on-surface-variant mb-8 font-body-md">Comprehensive inspection and maintenance programs to extend the lifecycle of your industrial assets.</p>
+<a class="font-label-caps text-label-caps text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all tracking-widest font-bold uppercase" href="#">SERVICE SPECS <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+<!-- Card 4 -->
+<div class="bg-white border border-outline-variant p-10 industrial-cut glow-hover transition-all group reveal delay-100">
+<span class="material-symbols-outlined text-5xl text-primary mb-8" data-icon="construction">construction</span>
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-4 uppercase group-hover:text-primary transition-colors">Project Management</h3>
+<p class="text-on-surface-variant mb-8 font-body-md">Professional oversight for complex industrial builds, ensuring on-time and on-budget delivery.</p>
+<a class="font-label-caps text-label-caps text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all tracking-widest font-bold uppercase" href="#">METHODOLOGY <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+<!-- Card 5 -->
+<div class="bg-white border border-outline-variant p-10 industrial-cut glow-hover transition-all group reveal delay-200">
+<span class="material-symbols-outlined text-5xl text-primary mb-8" data-icon="inventory_2">inventory_2</span>
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-4 uppercase group-hover:text-primary transition-colors">Supply Chain</h3>
+<p class="text-on-surface-variant mb-8 font-body-md">Resilient sourcing and procurement networks that mitigate risk in volatile industrial markets.</p>
+<a class="font-label-caps text-label-caps text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all tracking-widest font-bold uppercase" href="#">GLOBAL REACH <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+<!-- Card 6 -->
+<div class="bg-white border border-outline-variant p-10 industrial-cut glow-hover transition-all group border-t-4 border-t-primary reveal delay-300">
+<span class="material-symbols-outlined text-5xl text-primary mb-8" data-icon="biotech">biotech</span>
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-4 uppercase group-hover:text-primary transition-colors">Technical R&amp;D</h3>
+<p class="text-on-surface-variant mb-8 font-body-md">Developing next-generation industrial materials and automation solutions in our private labs.</p>
+<a class="font-label-caps text-label-caps text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all tracking-widest font-bold uppercase" href="#">INNOVATIONS <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Industry Leaders Trust Us -->
+<section class="py-24 bg-white overflow-hidden reveal">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col lg:flex-row justify-between items-end gap-gutter mb-16">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy uppercase leading-tight">Why Industry Leaders <span class="text-primary">Trust Us</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-6 border-l-2 border-primary pl-6">We don't just provide services; we engineer certainty. Our reputation is built on delivering high-stakes solutions where others see insurmountable complexity.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-14 h-14 border border-outline flex items-center justify-center hover:bg-deep-navy hover:text-white transition-all industrial-cut hover-scale">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-14 h-14 border border-outline flex items-center justify-center hover:bg-deep-navy hover:text-white transition-all industrial-cut hover-scale">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container-low p-12 border-l-8 border-primary industrial-cut shadow-sm relative overflow-hidden group reveal">
+<span class="material-symbols-outlined text-primary/5 text-[160px] absolute -top-8 -right-8 pointer-events-none">format_quote</span>
+<p class="font-body-lg italic text-deep-navy mb-10 relative z-10 leading-relaxed">"8 Point's technical depth is unparalleled. When we required a complete overhaul of our offshore loading systems, they delivered a solution that actually exceeded our throughput targets while cutting maintenance costs by 20%."</p>
+<div class="flex items-center gap-5 relative z-10">
+<div class="w-14 h-14 bg-deep-navy flex items-center justify-center text-on-primary font-bold industrial-cut">JD</div>
+<div>
+<p class="font-label-caps text-label-caps text-deep-navy font-bold tracking-widest uppercase">CHIEF OPERATIONS OFFICER</p>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-[0.15em] font-medium">Global Energy Solutions Corp</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-12 border-l-8 border-deep-navy industrial-cut shadow-sm relative overflow-hidden group reveal">
+<span class="material-symbols-outlined text-deep-navy/5 text-[160px] absolute -top-8 -right-8 pointer-events-none">format_quote</span>
+<p class="font-body-lg italic text-deep-navy mb-10 relative z-10 leading-relaxed">"The level of detail in their technical quotes and the execution on-site is what sets 8 Point apart. They are more than a contractor; they are a strategic industrial partner that understands the value of uptime."</p>
+<div class="flex items-center gap-5 relative z-10">
+<div class="w-14 h-14 bg-primary flex items-center justify-center text-on-primary font-bold industrial-cut">SM</div>
+<div>
+<p class="font-label-caps text-label-caps text-deep-navy font-bold tracking-widest uppercase">LOGISTICS DIRECTOR</p>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-[0.15em] font-medium">Maritime Logistics Ltd.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Quote Contact Area -->
+<section class="bg-surface py-24 relative overflow-hidden border-t border-outline-variant reveal">
+<div class="absolute inset-0 opacity-10">
+<div class="w-full h-full industrial-grid"></div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div class="space-y-10">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy uppercase leading-tight">Ready to Discuss Your <span class="text-primary">Project?</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant border-l-2 border-primary pl-6">
+                        Whether you are in the planning stage or require immediate on-site technical support, our team of engineering experts is prepared to assist with your specific requirements.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="flex items-center gap-6 p-6 bg-white border border-outline industrial-cut shadow-sm reveal">
+<div class="w-14 h-14 bg-primary flex items-center justify-center text-on-primary industrial-cut">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="font-label-caps text-label-sm text-on-surface-variant uppercase tracking-widest font-bold">HQ DIRECT LINE</p>
+<p class="font-headline-md text-2xl text-deep-navy">+65 6265 8888<br>+65 6265 9999</p>
+</div>
+</div>
+<div class="flex items-center gap-6 p-6 bg-white border border-outline industrial-cut shadow-sm reveal">
+<div class="w-14 h-14 bg-primary flex items-center justify-center text-on-primary industrial-cut">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="font-label-caps text-label-sm text-on-surface-variant uppercase tracking-widest font-bold">DIRECT INQUIRY</p>
+<p class="font-headline-md text-2xl text-deep-navy">info@8point.com.sg<br>solutions@8point.com.sg</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-10 industrial-cut shadow-2xl border border-outline-variant relative reveal">
+<div class="absolute top-4 right-6">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest">SYSTEM ONLINE</span>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">FULL NAME</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="John Doe" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">COMPANY</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="Industrial Solutions Ltd" type="text">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">SERVICE SECTOR</label>
+<select class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all">
+<option>Heavy Fabrication</option>
+<option>Terminal Operations</option>
+<option>Logistics &amp; Supply Chain</option>
+<option>Engineering Consulting</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">PROJECT BRIEF</label>
+<textarea class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="Briefly describe your project requirements..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-5 industrial-cut hover:brightness-110 transition-all uppercase tracking-widest shadow-lg hover-scale" type="submit">
+                            SUBMIT RFQ FOR REVIEW
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low pt-24 pb-12 border-t-2 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="flex items-center gap-4 mb-4"><img alt="8 Point Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt5CzQbmQFOOmy15eE8sGbPyVUpIklQbjt3dcGbmFrbxsEJmdJhHG3JvwRhT0ZEs6YyTHPigwzZ9dWmuJoVGOD4KOYvm7d2ndU2U-LQPZBsqd2cx74Xp46yN27hFFhWFs-xRCHKSgaklNy-bYrWkrgK_M1GDvTYhabfFBReKnaann1_wqt8RZCzAIDoKNh2xllG7tgOn7CFS963hVf83pTbcTHIUZp8mti6r4oJQ3hSaNERvtMFBm_VjFyp0Wetpi6K7fZzkDNNdU"><span class="text-headline-md font-headline-md font-bold text-on-background uppercase">8 POINT</span></div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Leading the marine insulation industry in Singapore since 2004. Quality, Safety, and Engineering excellence in every weld and every layer.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline-variant hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline-variant hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">work</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Navigation</div>
+<div class="grid grid-cols-2 gap-y-3">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+<a class="font-body-md text-primary font-semibold" href="services.html">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="projects.html">Projects</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="certifications.html">Certifications</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Safety</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Newsletter</div>
+<p class="font-body-md text-on-surface-variant">Stay updated with our latest maritime engineering projects and industry news.</p>
+<div class="flex gap-2">
+<input class="bg-white border border-outline-variant p-3 text-on-surface flex-grow focus:ring-1 focus:ring-primary industrial-cut" placeholder="Email Address" type="email">
+<button class="bg-primary text-on-primary px-6 py-2 hover:brightness-110 industrial-cut font-label-md">JOIN</button>
+</div>
+</div>
+</div>
+<div class="mt-20 border-t border-outline-variant px-margin-desktop max-w-container-max mx-auto py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">© 2024 8 Point Engineering. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interaction for form inputs
+    document.querySelectorAll('input, textarea, select').forEach(el => {
+        el.addEventListener('focus', () => {
+            const label = el.parentElement.querySelector('label');
+            if (label) label.classList.add('text-primary');
+        });
+        el.addEventListener('blur', () => {
+            const label = el.parentElement.querySelector('label');
+            if (label) label.classList.remove('text-primary');
+        });
+    });
+
+    // Reveal elements on scroll
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+
+    // Navbar shadow on scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-md');
+        } else {
+            header.classList.remove('shadow-md');
+        }
+    });
+</script>
+<script src="nav.js"></script></body></html>

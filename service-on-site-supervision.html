@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c8102e", // Industrial red
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c8102e",
+                        "on-primary-container": "#ffffff",
+                        "background": "#ffffff",
+                        "on-background": "#0f172a",
+                        "surface": "#f8fafc", // Light slate surface
+                        "on-surface": "#0f172a",
+                        "surface-variant": "#e2e8f0",
+                        "on-surface-variant": "#475569",
+                        "outline": "#cbd5e1",
+                        "outline-variant": "#e2e8f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-high": "#e2e8f0",
+                        "surface-container-highest": "#f8fafc",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Barlow Condensed"],
+                        "label-caps": ["Barlow Condensed"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Barlow Condensed"],
+                        "headline-lg": ["Barlow Condensed"],
+                        "headline-xl": ["Barlow Condensed"],
+                        "display-lg": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .industrial-cut {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] transition-all duration-300" id="site-header">
+<nav class="flex justify-between items-center w-full h-20 px-4 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-10 w-auto" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center">
+<a href="index.html"><span class="text-2xl font-extrabold tracking-tight text-[#0f172a] uppercase" style="font-family:'Barlow Condensed',sans-serif;">8 POINT</span></a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a data-page="index.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="index.html">Home</a>
+<a data-page="about.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="about.html">About</a>
+<a data-page="services.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="services.html">Services</a>
+<a data-page="projects.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="projects.html">Projects</a>
+<a data-page="certifications.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="certifications.html">Certifications</a>
+<a data-page="contact.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-3">
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#0f172a]" aria-label="Open menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+<a href="request-quote.html" class="bg-[#c8102e] text-white text-sm font-bold px-6 py-2.5 uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);font-family:'Barlow Condensed',sans-serif;">REQUEST QUOTE</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#e2e8f0] px-4 py-4 space-y-3 shadow-lg">
+<a href="index.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Home</a>
+<a href="about.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">About</a>
+<a href="services.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Services</a>
+<a href="projects.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Projects</a>
+<a href="certifications.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Certifications</a>
+<a href="contact.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Contact Us</a>
+<a href="request-quote.html" class="block text-sm font-bold text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Request Quote</a>
+</div>
+</header>
+<div class="flex max-w-container-max mx-auto pt-20">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col w-72 border-r border-outline-variant bg-surface-container-low sticky top-20 h-[calc(100vh-80px)] overflow-y-auto">
+<div class="p-8">
+<span class="font-headline-md text-headline-md text-on-background block uppercase">Industrial Services</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mt-1">Precision Engineering Suite</span>
+</div>
+<nav class="flex-1">
+<ul class="space-y-0.5 px-4">
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="service-hot-cold-insulation.html"><span class="material-symbols-outlined text-primary">thermostat</span>Hot &amp; Cold Insulation</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="service-cryogenic.html"><span class="material-symbols-outlined text-primary">ac_unit</span>Cryogenic Systems</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="service-pipeline-jackets.html"><span class="material-symbols-outlined text-primary">layers</span>Pipeline Jackets</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="service-sheet-metal.html"><span class="material-symbols-outlined text-primary">precision_manufacturing</span>Sheet Metal Fabrication</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="service-acoustic-control.html"><span class="material-symbols-outlined text-primary">volume_off</span>Acoustic Control</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="service-fire-protection.html"><span class="material-symbols-outlined text-primary">local_fire_department</span>Fire Protection</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="service-marine-refurbishment.html"><span class="material-symbols-outlined text-primary">directions_boat</span>Marine Refurbishment</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md bg-primary text-on-primary font-bold industrial-cut" href="service-on-site-supervision.html"><span class="material-symbols-outlined">engineering</span>On-site Supervision</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="service-technical-audits.html"><span class="material-symbols-outlined text-primary">analytics</span>Technical Audits</a></li>
+</ul>
+</nav>
+<div class="p-8 border-t border-outline-variant">
+<button class="w-full py-4 border-2 border-primary text-primary font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all industrial-cut">Download Catalog</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-w-0">
+<!-- Hero Section -->
+<section class="relative w-full aspect-[21/9] md:aspect-[24/10] overflow-hidden">
+<img alt="QA/QC engineering inspection" class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80">
+<div class="absolute inset-0 bg-gradient-to-r from-on-background via-on-background/70 to-transparent"></div>
+<div class="relative h-full flex flex-col justify-center px-margin-desktop">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary text-on-primary font-label-caps text-label-caps mb-4 self-start industrial-cut">
+<span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                    SERVICE EXCELLENCE
+                </div>
+<h1 class="font-display-lg text-display-lg text-on-primary max-w-2xl uppercase">ON-SITE SUPERVISION &amp; <span class="text-primary-container bg-white px-2">INTEGRITY</span></h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-xl mt-6 border-l-2 border-primary pl-6">Rigorous QA/QC monitoring and project management to ensure compliance with ASME, ASTM, and ISO standards in complex industrial environments.</p>
+</div>
+</section>
+<!-- Metrics / Key Highlights -->
+<section class="px-margin-desktop py-16 bg-white">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm industrial-cut border-l-4 border-l-primary">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-2 uppercase">Safety Rating</span>
+<span class="font-headline-xl text-headline-xl text-on-background block">0.0 TRIR</span>
+</div>
+<div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm industrial-cut border-l-4 border-l-primary">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-2 uppercase">Compliance</span>
+<span class="font-headline-xl text-headline-xl text-primary block">100%</span>
+</div>
+<div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm industrial-cut border-l-4 border-l-primary">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-2 uppercase">Engineers</span>
+<span class="font-headline-xl text-headline-xl text-on-background block">LEAD IWE</span>
+</div>
+<div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm industrial-cut border-l-4 border-l-primary">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-2 uppercase">Global Reach</span>
+<span class="font-headline-xl text-headline-xl text-primary block">40+ LOC</span>
+</div>
+</div>
+</section>
+<!-- Detailed Service Grid -->
+<section class="px-margin-desktop py-24 bg-surface-container-lowest">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-background uppercase">Precision Oversight Protocols</h2>
+<div class="w-24 h-1.5 bg-primary mt-4"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-6">Our supervision methodology integrates real-time digital tracking with hands-on technical validation to mitigate risk and ensure structural longevity.</p>
+</div>
+<div class="bento-grid">
+<!-- Protocol 1 -->
+<div class="col-span-12 md:col-span-8 bg-white border border-outline-variant p-10 flex flex-col justify-between min-h-[450px] industrial-cut shadow-sm">
+<div>
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-5xl text-primary">security</span>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Safety Protocol Integration</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">We don't just supervise; we enforce a zero-compromise safety culture. Our on-site leads are certified in NEBOSH and IOSH, managing comprehensive Risk Assessments and Method Statements (RAMS) daily. We oversee PTW systems and ensure all sub-contractors adhere to the 8 POINT 'Safety-First' blueprint.</p>
+</div>
+<div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6 border-t border-outline-variant pt-10">
+<div class="flex flex-col"><span class="font-label-md text-label-md font-bold uppercase text-on-background">PTW OVERSIGHT</span><span class="text-label-sm font-label-sm text-on-surface-variant">Live Management</span></div>
+<div class="flex flex-col"><span class="font-label-md text-label-md font-bold uppercase text-on-background">PPE AUDITS</span><span class="text-label-sm font-label-sm text-on-surface-variant">Hourly Inspections</span></div>
+<div class="flex flex-col"><span class="font-label-md text-label-md font-bold uppercase text-on-background">HAZOP ANALYSIS</span><span class="text-label-sm font-label-sm text-on-surface-variant">Phase-Specific</span></div>
+</div>
+</div>
+<!-- Protocol 2 -->
+<div class="col-span-12 md:col-span-4 bg-on-background text-on-primary p-10 flex flex-col industrial-cut shadow-xl border-t-8 border-primary">
+<span class="material-symbols-outlined text-6xl mb-8 text-primary">verified_user</span>
+<h3 class="font-headline-md text-headline-md mb-6 uppercase tracking-tight">QA/QC Certification</h3>
+<p class="font-body-md text-body-md text-slate-400 mb-10">Rigorous inspection points at every installation milestone. We provide full traceability documentation (MDR) for every square meter of insulation applied.</p>
+<ul class="space-y-5 font-label-md text-label-md mt-auto">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> NDT VISUAL INSPECTION</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> THICKNESS VERIFICATION</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> CLADDING INTEGRITY</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> THERMAL IMAGING</li>
+</ul>
+</div>
+<!-- Protocol 3 -->
+<div class="col-span-12 md:col-span-4 bg-surface-container p-10 industrial-cut border border-outline-variant shadow-sm">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-4xl text-primary">schedule</span>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Project Controls</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10">Critical path management using real-time field data. Our supervisors provide daily progress reports (DPRs) to ensure the timeline remains locked to the original blueprint.</p>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4"></div>
+</div>
+<span class="font-label-md text-label-md mt-3 block text-on-surface-variant uppercase tracking-widest font-bold">Operational Efficiency: 88%</span>
+</div>
+<!-- Protocol 4 -->
+<div class="col-span-12 md:col-span-8 bg-white border border-outline-variant overflow-hidden flex flex-col md:flex-row industrial-cut shadow-sm">
+<div class="p-10 flex-1">
+<h3 class="font-headline-md text-headline-md text-on-background mb-6 uppercase">Compliance &amp; Standardization</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10">Our supervision team ensures every installation meets international regulatory frameworks including CINI, ISO 15665 for acoustic control, and specific client-level specifications.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-surface-container text-on-background font-label-md text-label-md industrial-cut border border-outline-variant">ASTM C547</span>
+<span class="px-4 py-2 bg-surface-container text-on-background font-label-md text-label-md industrial-cut border border-outline-variant">ASME B31.3</span>
+<span class="px-4 py-2 bg-surface-container text-on-background font-label-md text-label-md industrial-cut border border-outline-variant">BS EN 14303</span>
+</div>
+</div>
+<div class="bg-primary p-12 flex flex-col justify-center items-center text-center w-full md:w-64 shrink-0">
+<span class="font-display-lg text-display-lg text-on-primary">100%</span>
+<span class="font-label-caps text-label-caps text-on-primary/80 uppercase tracking-widest font-bold">Audit Readiness</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-desktop py-32 bg-on-background relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="grid grid-cols-12 h-full">
+<div class="col-span-1 border-r border-white/20"></div>
+<div class="col-span-1 border-r border-white/20"></div>
+<div class="col-span-1 border-r border-white/20"></div>
+<div class="col-span-1 border-r border-white/20"></div>
+<div class="col-span-1 border-r border-white/20"></div>
+<div class="col-span-1 border-r border-white/20"></div>
+</div>
+</div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="font-display-lg text-display-lg text-on-primary mb-8 uppercase leading-none">READY TO SECURE YOUR <span class="text-primary">PROJECT INTEGRITY?</span></h2>
+<p class="font-body-lg text-body-lg text-slate-400 mb-12 max-w-2xl mx-auto">Contact our technical department today to discuss on-site supervision for your next industrial shutdown or greenfield development.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-primary text-on-primary font-label-md text-label-md h-16 px-12 industrial-cut hover:brightness-110 transition-all uppercase tracking-widest font-bold">CONSULT AN ENGINEER</button>
+<button class="border-2 border-white text-on-primary font-label-md text-label-md h-16 px-12 industrial-cut hover:bg-white hover:text-on-background transition-all uppercase tracking-widest font-bold">VIEW CASE STUDIES</button>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer Shell -->
+<footer class="w-full bg-white border-t-4 border-primary">
+<div class="max-w-container-max mx-auto px-margin-desktop py-20 flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-sm"><img alt="8 Point Industrial Logo" class="h-12 w-auto mb-4" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center">
+<span class="font-headline-md text-headline-md text-on-background block mb-4 uppercase font-bold tracking-tighter">8 POINT</span>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Leading the industrial integrity sector through precision engineering, rigorous safety standards, and specialized technical supervision since 2004.</p>
+<div class="flex gap-3">
+<a class="w-10 h-10 flex items-center justify-center bg-surface-container border border-outline-variant hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+<a class="w-10 h-10 flex items-center justify-center bg-surface-container border border-outline-variant hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-sm">construction</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-x-16 gap-y-4">
+<div class="space-y-4">
+<span class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Resources</span>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Compliance</a>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Safety Standards</a>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Technical Data</a>
+</div>
+<div class="space-y-4">
+<span class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Company</span>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Case Studies</a>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Global Logistics</a>
+</div>
+</div>
+<div class="w-full md:w-auto">
+<span class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest mb-4 block">Newsletter</span>
+<div class="flex">
+<input class="bg-surface-container border border-outline-variant px-4 h-12 industrial-cut flex-1 md:w-64 focus:ring-1 focus:ring-primary focus:border-primary" placeholder="Email Address" type="email">
+<button class="bg-primary text-on-primary px-6 h-12 industrial-cut font-label-md ml-2 hover:brightness-110 transition-all">JOIN</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container border-t border-outline-variant py-8">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">
+<span class="">© 2024 8 POINT ENGINEERING. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-8">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Simple micro-interaction for scroll effects
+    document.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 20) {
+            nav.classList.add('shadow-md', 'bg-white/95', 'backdrop-blur-sm');
+        } else {
+            nav.classList.remove('shadow-md', 'bg-white/95', 'backdrop-blur-sm');
+        }
+    });
+
+    // Hover effect for bento cards
+    const cards = document.querySelectorAll('.bento-grid > div');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-4px)';
+            card.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+</script>
+
+
+
+
+<script src="nav.js"></script></body></html>

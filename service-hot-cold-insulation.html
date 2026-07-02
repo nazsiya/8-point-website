@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Hot &amp; Cold Insulation | 8 POINT ENGINEERING</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(15, 23, 42, 0.1);
+        }
+        .dot-grid {
+            background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .industrial-cut {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c8102e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c8102e",
+                        "on-primary-container": "#ffffff",
+                        "background": "#ffffff",
+                        "on-background": "#0f172a",
+                        "surface": "#f8fafc",
+                        "on-surface": "#0f172a",
+                        "surface-variant": "#e2e8f0",
+                        "on-surface-variant": "#475569",
+                        "outline": "#cbd5e1",
+                        "outline-variant": "#e2e8f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-high": "#e2e8f0",
+                        "surface-container-highest": "#f8fafc",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Barlow Condensed"],
+                        "label-caps": ["Barlow Condensed"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Barlow Condensed"],
+                        "headline-lg": ["Barlow Condensed"],
+                        "headline-xl": ["Barlow Condensed"],
+                        "display-lg": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] transition-all duration-300" id="site-header">
+<nav class="flex justify-between items-center w-full h-20 px-4 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-10 w-auto" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center">
+<a href="index.html"><span class="text-2xl font-extrabold tracking-tight text-[#0f172a] uppercase" style="font-family:'Barlow Condensed',sans-serif;">8 POINT</span></a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a data-page="index.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="index.html">Home</a>
+<a data-page="about.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="about.html">About</a>
+<a data-page="services.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="services.html">Services</a>
+<a data-page="projects.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="projects.html">Projects</a>
+<a data-page="certifications.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="certifications.html">Certifications</a>
+<a data-page="contact.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-3">
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#0f172a]" aria-label="Open menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+<a href="request-quote.html" class="bg-[#c8102e] text-white text-sm font-bold px-6 py-2.5 uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);font-family:'Barlow Condensed',sans-serif;">REQUEST QUOTE</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#e2e8f0] px-4 py-4 space-y-3 shadow-lg">
+<a href="index.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Home</a>
+<a href="about.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">About</a>
+<a href="services.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Services</a>
+<a href="projects.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Projects</a>
+<a href="certifications.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Certifications</a>
+<a href="contact.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Contact Us</a>
+<a href="request-quote.html" class="block text-sm font-bold text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Request Quote</a>
+</div>
+</header>
+<div class="flex max-w-container-max mx-auto min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col border-r border-outline-variant h-full w-72 fixed overflow-y-auto bg-surface-container py-8 px-4">
+<div class="mb-8 px-2">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Industrial Services</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Precision Engineering Suite</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 p-3 bg-primary text-on-primary font-bold font-label-md text-label-md" href="service-hot-cold-insulation.html">
+<span class="material-symbols-outlined">thermostat</span> Hot &amp; Cold Insulation
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-all font-label-md text-label-md" href="service-cryogenic.html">
+<span class="material-symbols-outlined">ac_unit</span> Cryogenic Systems
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-all font-label-md text-label-md" href="service-pipeline-jackets.html">
+<span class="material-symbols-outlined">layers</span> Pipeline Jackets
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-all font-label-md text-label-md" href="service-sheet-metal.html">
+<span class="material-symbols-outlined">precision_manufacturing</span> Sheet Metal Fabrication
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-all font-label-md text-label-md" href="service-acoustic-control.html">
+<span class="material-symbols-outlined">volume_off</span> Acoustic Control
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-all font-label-md text-label-md" href="service-fire-protection.html">
+<span class="material-symbols-outlined">local_fire_department</span> Fire Protection
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-all font-label-md text-label-md" href="service-marine-refurbishment.html">
+<span class="material-symbols-outlined">directions_boat</span> Marine Refurbishment
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-all font-label-md text-label-md" href="service-on-site-supervision.html">
+<span class="material-symbols-outlined">engineering</span> On-site Supervision
+            </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-all font-label-md text-label-md" href="service-technical-audits.html">
+<span class="material-symbols-outlined">analytics</span> Technical Audits
+            </a>
+</nav>
+<div class="mt-8 pt-8 border-t border-outline-variant px-2">
+<button class="w-full bg-white text-primary border border-primary font-label-caps text-label-caps py-4 industrial-cut hover:bg-primary hover:text-on-primary transition-all">Download Catalog</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-72 bg-background">
+<!-- Hero Section -->
+<section class="relative h-[60vh] min-h-[500px] flex items-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hot &amp; Cold Insulation background" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 dot-grid opacity-20"></div>
+</div>
+<div class="relative z-20 px-margin-desktop pb-16 w-full max-w-4xl">
+<div class="bg-primary w-16 h-1.5 mb-6"></div>
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-4 leading-none uppercase">HOT &amp; COLD INSULATION</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-2 border-primary pl-6">High-performance thermal containment systems designed for extreme industrial environments. Engineered for efficiency, safety, and longevity.</p>
+</div>
+</section>
+<!-- Technical Specification Bento -->
+<section class="px-margin-desktop py-20 bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Range Card -->
+<div class="md:col-span-4 bg-white border border-outline-variant p-8 hard-shadow flex flex-col justify-between border-t-4 border-t-primary transition-all duration-700 opacity-100 translate-y-0">
+<div>
+<span class="font-label-sm text-label-sm text-primary mb-4 block uppercase tracking-widest font-bold">Operational Range</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">-50°C TO 1000°C</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Full-spectrum thermal management covering both cryogenic preservation and extreme heat containment for steam and molten processes.</p>
+</div>
+<!-- Material Card 1 -->
+<div class="md:col-span-4 bg-white border border-outline-variant p-8 hard-shadow border-t-4 border-t-on-background transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-surface-container-high p-3">
+<span class="material-symbols-outlined text-primary">layers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Mineral Wool</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">High-density basalt-based fibers offering exceptional fire resistance and thermal performance for refinery pipelines.</p>
+<ul class="space-y-3 font-label-md text-label-md text-on-surface uppercase">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> THERMAL STABILITY</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> ACOUSTIC DAMPING</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> NON-COMBUSTIBLE</li>
+</ul>
+</div>
+<!-- Material Card 2 -->
+<div class="md:col-span-4 bg-white border border-outline-variant p-8 hard-shadow border-t-4 border-t-on-background transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex items-center gap-4 mb-6">
+<div class="bg-surface-container-high p-3">
+<span class="material-symbols-outlined text-primary">view_quilt</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Calcium Silicate</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Rigid structural insulation designed for heavy-duty applications requiring high compressive strength and moisture resistance.</p>
+<ul class="space-y-3 font-label-md text-label-md text-on-surface uppercase">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> IMPACT RESISTANT</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> ASBESTOS-FREE</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> CORROSION INHIBITING</li>
+</ul>
+</div>
+<!-- Large Technical Table -->
+<div class="md:col-span-8 bg-white border border-outline-variant p-0 hard-shadow transition-all duration-700 opacity-100 translate-y-0">
+<div class="p-6 border-b border-outline-variant bg-surface-container-high">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Thermal Conductivity Analysis</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-label-sm text-label-sm border-collapse">
+<thead>
+<tr class="bg-surface-container uppercase text-on-surface-variant font-bold">
+<th class="p-4 border-r border-outline-variant">Mean Temp (°C)</th>
+<th class="p-4 border-r border-outline-variant">Mineral Wool (W/m·K)</th>
+<th class="p-4 border-r border-outline-variant">Calcium Silicate (W/m·K)</th>
+<th class="p-4">Standard Compliance</th>
+</tr>
+</thead>
+<tbody class="text-on-surface">
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="p-4 border-r border-outline-variant font-bold">50</td>
+<td class="p-4 border-r border-outline-variant">0.038</td>
+<td class="p-4 border-r border-outline-variant">0.052</td>
+<td class="p-4">ASTM C547 / C533</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="p-4 border-r border-outline-variant font-bold">200</td>
+<td class="p-4 border-r border-outline-variant">0.058</td>
+<td class="p-4 border-r border-outline-variant">0.068</td>
+<td class="p-4">ISO 12241 compliant</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="p-4 border-r border-outline-variant font-bold">400</td>
+<td class="p-4 border-r border-outline-variant">0.096</td>
+<td class="p-4 border-r border-outline-variant">0.090</td>
+<td class="p-4">Industrial Grade</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 border-r border-outline-variant font-bold">600</td>
+<td class="p-4 border-r border-outline-variant">0.145</td>
+<td class="p-4 border-r border-outline-variant">0.118</td>
+<td class="p-4">Max Peak Rating</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Application Areas -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-on-background text-on-primary p-8 hard-shadow flex-1 industrial-cut transition-all duration-700 opacity-100 translate-y-0">
+<h4 class="font-label-md text-label-md text-primary mb-4 uppercase font-bold tracking-widest">Primary Application</h4>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">Oil Refineries</h3>
+<p class="font-body-md text-body-md text-surface-variant mb-6">Thermal protection for fractional distillation columns and high-pressure steam distribution networks.</p>
+<img class="w-full h-32 object-cover grayscale opacity-60 hover:grayscale-0 transition-all duration-500 border border-outline-variant/30" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80">
+</div>
+<div class="bg-primary text-on-primary p-8 hard-shadow flex-1 industrial-cut transition-all duration-700 opacity-100 translate-y-0">
+<h4 class="font-label-md text-label-md text-on-primary mb-4 uppercase font-bold tracking-widest opacity-80">Primary Application</h4>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">Power Plants</h3>
+<p class="font-body-md text-body-md opacity-90 mb-6">Critical insulation for boiler walls, turbine housings, and exhaust heat recovery systems.</p>
+<img class="w-full h-32 object-cover grayscale opacity-60 hover:grayscale-0 transition-all duration-500 border border-white/20" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&q=80">
+</div>
+</div>
+</div>
+</section>
+<!-- Efficiency Metric CTA -->
+<section class="bg-white py-24 px-margin-desktop border-y border-outline-variant relative overflow-hidden">
+<div class="absolute inset-0 dot-grid opacity-10"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="font-display-lg text-headline-xl text-on-background mb-8 tracking-tight uppercase">Reduce Energy Loss By Up To <span class="text-primary">45%</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 border-x-2 border-primary px-8 inline-block">Our precision-engineered jacketing systems and insulation cores prevent thermal leakage, significantly lowering operational costs and carbon footprints.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-10 py-5 industrial-cut hover:brightness-110 transition-all active:scale-[0.98] uppercase tracking-widest">
+                        Consult an Engineer
+                    </button>
+<button class="bg-white text-on-background border-2 border-on-background font-label-md text-label-md px-10 py-5 industrial-cut hover:bg-on-background hover:text-white transition-all uppercase tracking-widest">
+                        View Case Studies
+                    </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low pt-24 pb-12 border-t-2 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="flex items-center gap-4 mb-4"><img alt="8 Point Logo" class="h-10 w-auto object-contain" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center"><span class="text-headline-md font-headline-md font-bold text-on-background uppercase">8 POINT</span></div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Leading the marine insulation industry in Singapore since 2004. Quality, Safety, and Engineering excellence in every weld and every layer.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline-variant hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline-variant hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">work</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Navigation</div>
+<div class="grid grid-cols-2 gap-y-3">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+<a class="font-body-md text-primary font-semibold" href="services.html">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="projects.html">Projects</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="certifications.html">Certifications</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Safety</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Newsletter</div>
+<p class="font-body-md text-on-surface-variant">Stay updated with our latest maritime engineering projects and industry news.</p>
+<div class="flex gap-2">
+<input class="bg-white border border-outline-variant p-3 text-on-surface flex-grow focus:ring-1 focus:ring-primary industrial-cut" placeholder="Email Address" type="email">
+<button class="bg-primary text-on-primary px-6 py-2 hover:brightness-110 industrial-cut font-label-md">JOIN</button>
+</div>
+</div>
+</div>
+<div class="mt-20 border-t border-outline-variant px-margin-desktop max-w-container-max mx-auto py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">© 2024 8 Point Engineering. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- Floating Action Button for Mobile -->
+<button class="fixed bottom-8 right-8 bg-primary text-on-primary w-16 h-16 rounded-full flex items-center justify-center hard-shadow hover:scale-110 active:scale-95 transition-all z-40 lg:hidden duration-700 opacity-0 translate-y-8">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<script>
+    // Intersection observer for reveal animations
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.hard-shadow').forEach(el => {
+        el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+        observer.observe(el);
+    });
+
+    // Simple scroll micro-interaction for navbar
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 20) {
+            header.classList.add('shadow-md', 'bg-white/95', 'backdrop-blur-sm');
+        } else {
+            header.classList.remove('shadow-md', 'bg-white/95', 'backdrop-blur-sm');
+        }
+    });
+</script>
+
+
+
+
+
+
+<script src="nav.js"></script></body></html>

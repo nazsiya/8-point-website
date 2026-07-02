@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Certifications &amp; Qualifications | 8 POINT Engineering</title>
+<meta content="Official certifications and engineering qualifications of 8 Point Engineering. ISO certified marine and offshore solutions provider." name="description">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c8102e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c8102e",
+                        "on-primary-container": "#ffffff",
+                        "background": "#ffffff",
+                        "on-background": "#0f172a",
+                        "surface": "#f8fafc",
+                        "on-surface": "#0f172a",
+                        "surface-variant": "#e2e8f0",
+                        "on-surface-variant": "#475569",
+                        "outline": "#cbd5e1",
+                        "outline-variant": "#e2e8f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-high": "#e2e8f0",
+                        "surface-container-highest": "#f8fafc",
+                        "deep-navy": "#0f172a",
+                        "industrial-red": "#c8102e",
+                        "slate-gray": "#475569",
+                        "surface-ice": "#f8fafc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Barlow Condensed"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Barlow Condensed"],
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg": ["Barlow Condensed"],
+                        "headline-md": ["Barlow Condensed"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Barlow Condensed"],
+                        "headline-lg-mobile": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .industrial-cut {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+        }
+        .dot-grid {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+
+        .btn-scale-hover {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .btn-scale-hover:hover {
+            transform: scale(1.05);
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-surface-ice text-on-surface font-body-md overflow-x-hidden">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] transition-all duration-300" id="site-header">
+<nav class="flex justify-between items-center w-full h-20 px-4 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-10 w-auto" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center">
+<a href="index.html"><span class="text-2xl font-extrabold tracking-tight text-[#0f172a] uppercase" style="font-family:'Barlow Condensed',sans-serif;">8 POINT</span></a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a data-page="index.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="index.html">Home</a>
+<a data-page="about.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="about.html">About</a>
+<a data-page="services.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="services.html">Services</a>
+<a data-page="projects.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="projects.html">Projects</a>
+<a data-page="certifications.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="certifications.html">Certifications</a>
+<a data-page="contact.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-3">
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#0f172a]" aria-label="Open menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+<a href="request-quote.html" class="bg-[#c8102e] text-white text-sm font-bold px-6 py-2.5 uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);font-family:'Barlow Condensed',sans-serif;">REQUEST QUOTE</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#e2e8f0] px-4 py-4 space-y-3 shadow-lg">
+<a href="index.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Home</a>
+<a href="about.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">About</a>
+<a href="services.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Services</a>
+<a href="projects.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Projects</a>
+<a href="certifications.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Certifications</a>
+<a href="contact.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Contact Us</a>
+<a href="request-quote.html" class="block text-sm font-bold text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Request Quote</a>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[400px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-30" data-alt="A professional, high-resolution architectural photography shot of complex industrial steel piping and structural beams against a clear blue sky. The scene is bright and airy, reflecting a high-key light mode aesthetic. The steel is polished and reflects industrial precision. The composition is geometric and technical, emphasizing structural integrity and certified quality engineering." src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=80">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-ice via-surface-ice/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full">
+<div class="max-w-2xl border-l-4 border-industrial-red pl-8">
+<span class="font-label-caps text-label-caps text-industrial-red uppercase tracking-[0.2em] mb-4 block animate-fade-in-up stagger-1">Standards &amp; Excellence</span>
+<h1 class="font-display-lg text-headline-xl mb-6 uppercase animate-fade-in-up stagger-2">Certifications &amp; Qualifications</h1>
+<p class="font-body-lg text-body-lg text-slate-gray leading-relaxed animate-fade-in-up stagger-3">
+                        At 8 POINT Engineering, our commitment to safety and quality is validated by international standards. We maintain rigorous compliance across marine, offshore, and industrial sectors.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Certifications Bento Grid -->
+<section class="py-24 max-w-container-max mx-auto px-margin-desktop dot-grid">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main ISO Card -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-silver p-12 industrial-cut flex flex-col justify-between group hover:shadow-lg transition-all reveal-on-scroll">
+<div>
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-industrial-red text-6xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="bg-surface-container-high px-4 py-1 font-label-sm text-label-sm uppercase">Active Compliance</span>
+</div>
+<h2 class="font-headline-xl text-headline-lg mb-6">ISO CERTIFICATIONS</h2>
+<p class="text-slate-gray font-body-lg mb-8 max-w-xl">
+                            Our integrated management system is certified under global ISO standards, ensuring every project meets the highest benchmarks for Quality (9001), Environment (14001), and Occupational Health and Safety (45001).
+                        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-outline-silver">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-md text-industrial-red">ISO 9001:2015</span>
+<span class="font-body-md text-body-md opacity-70">Quality Management</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-md text-industrial-red">ISO 14001:2015</span>
+<span class="font-body-md text-body-md opacity-70">Environmental Impact</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-md text-industrial-red">ISO 45001:2018</span>
+<span class="font-body-md text-body-md opacity-70">Health &amp; Safety</span>
+</div>
+</div>
+</div>
+<!-- bizSAFE Card -->
+<div class="md:col-span-4 bg-industrial-red text-on-primary p-12 industrial-cut flex flex-col justify-center items-center text-center reveal-on-scroll">
+<span class="material-symbols-outlined text-7xl mb-6">shield_with_heart</span>
+<h3 class="font-headline-md text-headline-md mb-2 uppercase">bizSAFE Star</h3>
+<p class="font-label-caps text-label-md opacity-80 uppercase tracking-widest mb-6">Level 5 Qualification</p>
+<p class="font-body-md text-body-md opacity-90">
+                        The highest level of safety accreditation in the bizSAFE journey, reflecting our zero-compromise approach to site safety.
+                    </p>
+</div>
+<!-- Marine Class Societies -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-silver p-8 industrial-cut hover:border-industrial-red transition-colors group reveal-on-scroll">
+<div class="h-1 bg-industrial-red w-12 mb-6 transition-all group-hover:w-full"></div>
+<h4 class="font-headline-md text-headline-md mb-4 uppercase">Classification Societies</h4>
+<ul class="space-y-4 font-label-caps text-label-md">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-industrial-red">check_circle</span>
+                            ABS (American Bureau of Shipping)
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-industrial-red">check_circle</span>
+                            DNV (Det Norske Veritas)
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-industrial-red">check_circle</span>
+                            Lloyd's Register
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-industrial-red">check_circle</span>
+                            Bureau Veritas
+                        </li>
+</ul>
+</div>
+<!-- Workplace Safety Card -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-silver p-8 industrial-cut relative overflow-hidden flex flex-col md:flex-row gap-12 items-center reveal-on-scroll">
+<div class="w-full md:w-1/3">
+<img class="w-full aspect-square object-cover industrial-cut" data-alt="A macro detailed photograph of an industrial safety helmet and certified pressure gauge lying on a technical blueprint. The image features a clean, professional workshop environment with cool-toned lighting. The focus is sharp on the engineering certifications and symbols visible on the equipment, emphasizing the theme of rigorous safety standards and workplace excellence." src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80">
+</div>
+<div class="w-full md:w-2/3">
+<h4 class="font-headline-md text-headline-md mb-4 uppercase">Occupational Health &amp; Safety</h4>
+<p class="text-slate-gray font-body-md mb-6">
+                            Our "Safety First" culture is more than a slogan. It's a technical framework integrated into every piping installation, electrical commissioning, and boiler service project we undertake.
+                        </p>
+<div class="flex flex-wrap gap-3">
+<span class="bg-surface-container-high px-3 py-1 font-label-sm text-label-sm uppercase font-bold tracking-widest">OSHA COMPLIANT</span>
+<span class="bg-surface-container-high px-3 py-1 font-label-sm text-label-sm uppercase font-bold tracking-widest">ZERO ACCIDENT TARGET</span>
+<span class="bg-surface-container-high px-3 py-1 font-label-sm text-label-sm uppercase font-bold tracking-widest">PPE CERTIFIED</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Accreditations -->
+<section class="py-24 bg-surface-container-low border-t border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal-on-scroll">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Engineering Qualifications</h2>
+<p class="text-slate-gray font-body-lg">
+                            Each member of our technical team holds specific engineering certifications required for high-stakes marine and offshore operations.
+                        </p>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-lowest border border-outline p-4 text-center min-w-[120px] industrial-cut">
+<span class="block font-headline-md text-headline-md text-industrial-red">20+</span>
+<span class="font-label-caps text-label-sm uppercase tracking-widest font-bold">Years Experience</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline p-4 text-center min-w-[120px] industrial-cut">
+<span class="block font-headline-md text-headline-md text-industrial-red">100%</span>
+<span class="font-label-caps text-label-sm uppercase tracking-widest font-bold">Compliance</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Tech Block 1 -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant hover:shadow-md transition-shadow group industrial-cut reveal-on-scroll stagger-1">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-industrial-red text-4xl">precision_manufacturing</span>
+<h5 class="font-headline-md text-headline-md uppercase leading-tight">Mechanical &amp; Piping</h5>
+</div>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li>• Certified High-Pressure Welders</li>
+<li>• Hydraulic System Specialists</li>
+<li>• Marine Boiler Installation Certs</li>
+<li>• ASNT NDT Level II Inspectors</li>
+</ul>
+</div>
+<!-- Tech Block 2 -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant hover:shadow-md transition-shadow group industrial-cut reveal-on-scroll stagger-2">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-industrial-red text-4xl">electrical_services</span>
+<h5 class="font-headline-md text-headline-md uppercase leading-tight">Electrical &amp; Instr.</h5>
+</div>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li>• Licensed Electrical Workers (LEW)</li>
+<li>• Instrumentation Calibration Certs</li>
+<li>• FPSO Commissioning Experts</li>
+<li>• Hazardous Area (Ex) Certified</li>
+</ul>
+</div>
+<!-- Tech Block 3 -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant hover:shadow-md transition-shadow group industrial-cut reveal-on-scroll stagger-3">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-industrial-red text-4xl">foundation</span>
+<h5 class="font-headline-md text-headline-md uppercase leading-tight">Offshore Structural</h5>
+</div>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li>• Structural Integrity Auditors</li>
+<li>• Insulation &amp; Cladding Specs</li>
+<li>• Tanker Repair Qualified</li>
+<li>• Marine Machinery Surveyors</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 max-w-container-max mx-auto px-margin-desktop text-center reveal-on-scroll">
+<div class="max-w-3xl mx-auto">
+<span class="font-label-caps text-label-md text-industrial-red uppercase tracking-widest mb-4 block font-bold">Ready for Deployment</span>
+<h2 class="font-headline-xl text-headline-xl mb-8 uppercase">Partner with a Certified Leader</h2>
+<p class="font-body-lg text-body-lg text-slate-gray mb-10">
+                    Our credentials are your assurance of project success. Contact our technical team today to review our full certification dossiers for your next offshore or industrial tender.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-industrial-red text-on-primary px-10 py-4 industrial-cut font-label-caps text-label-caps uppercase tracking-widest hover:brightness-110 btn-scale-hover transition-all font-bold">
+                        Contact Our Experts
+                    </button>
+<button class="bg-surface-container-high text-on-surface px-10 py-4 industrial-cut font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container btn-scale-hover transition-all font-bold">
+                        Download Quality Manual
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low pt-24 pb-12 border-t-2 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="flex items-center gap-4 mb-4"><img alt="8 Point Logo" class="h-10 w-auto object-contain" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center"><span class="text-headline-md font-headline-md font-bold text-on-background uppercase">8 POINT</span></div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Leading the marine insulation industry in Singapore since 2004. Quality, Safety, and Engineering excellence in every weld and every layer.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline-variant hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline-variant hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">work</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Navigation</div>
+<div class="grid grid-cols-2 gap-y-3">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+<a class="font-body-md text-primary font-semibold" href="services.html">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="projects.html">Projects</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="certifications.html">Certifications</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Safety</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Newsletter</div>
+<p class="font-body-md text-on-surface-variant">Stay updated with our latest maritime engineering projects and industry news.</p>
+<div class="flex gap-2">
+<input class="bg-white border border-outline-variant p-3 text-on-surface flex-grow focus:ring-1 focus:ring-primary industrial-cut" placeholder="Email Address" type="email">
+<button class="bg-primary text-on-primary px-6 py-2 hover:brightness-110 industrial-cut font-label-md">JOIN</button>
+</div>
+</div>
+</div>
+<div class="mt-20 border-t border-outline-variant px-margin-desktop max-w-container-max mx-auto py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">© 2024 8 Point Engineering. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Reveal on scroll observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Add delay to children for staggered effect if they have staggered classes
+                    if (entry.target.classList.contains('grid')) {
+                        const children = entry.target.querySelectorAll('.reveal-on-scroll');
+                        children.forEach((child, index) => {
+                            child.style.transitionDelay = `${index * 0.1}s`;
+                            child.classList.add('active');
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Micro-interactions for scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+<script src="nav.js"></script></body></html>

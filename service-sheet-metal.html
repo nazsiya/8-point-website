@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sheet Metal Fabrication | 8 POINT ENGINEERING</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c8102e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c8102e",
+                        "on-primary-container": "#ffffff",
+                        "background": "#ffffff",
+                        "on-background": "#0f172a",
+                        "surface": "#f8fafc",
+                        "on-surface": "#0f172a",
+                        "surface-variant": "#e2e8f0",
+                        "on-surface-variant": "#475569",
+                        "outline": "#cbd5e1",
+                        "outline-variant": "#e2e8f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-high": "#e2e8f0",
+                        "surface-container-highest": "#f8fafc",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Barlow Condensed"],
+                        "label-caps": ["Barlow Condensed"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Barlow Condensed"],
+                        "headline-lg": ["Barlow Condensed"],
+                        "headline-xl": ["Barlow Condensed"],
+                        "display-lg": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .industrial-grid {
+            background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .industrial-cut {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+        }
+        .bento-card {
+            border-left: 4px solid #c8102e;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] transition-all duration-300" id="site-header">
+<nav class="flex justify-between items-center w-full h-20 px-4 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-10 w-auto" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center">
+<a href="index.html"><span class="text-2xl font-extrabold tracking-tight text-[#0f172a] uppercase" style="font-family:'Barlow Condensed',sans-serif;">8 POINT</span></a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a data-page="index.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="index.html">Home</a>
+<a data-page="about.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="about.html">About</a>
+<a data-page="services.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="services.html">Services</a>
+<a data-page="projects.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="projects.html">Projects</a>
+<a data-page="certifications.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="certifications.html">Certifications</a>
+<a data-page="contact.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-3">
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#0f172a]" aria-label="Open menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+<a href="request-quote.html" class="bg-[#c8102e] text-white text-sm font-bold px-6 py-2.5 uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);font-family:'Barlow Condensed',sans-serif;">REQUEST QUOTE</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#e2e8f0] px-4 py-4 space-y-3 shadow-lg">
+<a href="index.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Home</a>
+<a href="about.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">About</a>
+<a href="services.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Services</a>
+<a href="projects.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Projects</a>
+<a href="certifications.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Certifications</a>
+<a href="contact.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Contact Us</a>
+<a href="request-quote.html" class="block text-sm font-bold text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Request Quote</a>
+</div>
+</header>
+<div class="flex max-w-container-max mx-auto pt-20">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col w-72 h-[calc(100vh-80px)] sticky top-20 bg-surface-container border-r border-outline-variant">
+<div class="p-8 border-b border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-on-background uppercase">Industrial Services</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Precision Engineering Suite</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-4">
+<ul class="space-y-1 px-4">
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant transition-all duration-150" href="service-hot-cold-insulation.html"><span class="material-symbols-outlined">thermostat</span>HOT &amp; COLD INSULATION</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant transition-all duration-150" href="service-cryogenic.html"><span class="material-symbols-outlined">ac_unit</span>CRYOGENIC SYSTEMS</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant transition-all duration-150" href="service-pipeline-jackets.html"><span class="material-symbols-outlined">layers</span>PIPELINE JACKETS</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md bg-primary text-on-primary font-bold industrial-cut" href="service-sheet-metal.html"><span class="material-symbols-outlined">precision_manufacturing</span>SHEET METAL FABRICATION</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant transition-all duration-150" href="service-acoustic-control.html"><span class="material-symbols-outlined">volume_off</span>ACOUSTIC CONTROL</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant transition-all duration-150" href="service-fire-protection.html"><span class="material-symbols-outlined">local_fire_department</span>FIRE PROTECTION</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant transition-all duration-150" href="service-marine-refurbishment.html"><span class="material-symbols-outlined">directions_boat</span>MARINE REFURBISHMENT</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant transition-all duration-150" href="service-on-site-supervision.html"><span class="material-symbols-outlined">engineering</span>ON-SITE SUPERVISION</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant transition-all duration-150" href="service-technical-audits.html"><span class="material-symbols-outlined">analytics</span>TECHNICAL AUDITS</a></li>
+</ul>
+</nav>
+<div class="p-6 border-t border-outline-variant">
+<button class="w-full py-3 flex items-center justify-center gap-2 border border-primary font-label-md text-label-md text-primary hover:bg-primary hover:text-on-primary transition-all industrial-cut">
+<span class="material-symbols-outlined text-[20px]">download</span> DOWNLOAD CATALOG
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 industrial-grid min-h-screen bg-background">
+<!-- Hero Section -->
+<section class="relative h-[500px] w-full overflow-hidden flex items-center">
+<div class="absolute inset-0 z-0">
+<img alt="Precision CNC Fabrication" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1565515636069-9db58fc4f6d7?w=800&q=80">
+<div class="absolute inset-0 bg-gradient-to-r from-on-background via-on-background/60 to-transparent transition-all duration-700 opacity-100 translate-y-0"></div>
+</div>
+<div class="relative z-10 px-margin-desktop text-on-primary w-full">
+<div class="mb-4 inline-flex items-center gap-3 px-4 py-1.5 bg-white shadow-sm border-l-4 border-primary transition-all duration-700 opacity-100 translate-y-0">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">SERVICE CODE: SMF-08</span>
+</div>
+<h1 class="font-display-lg text-display-lg uppercase mb-6 leading-tight max-w-3xl">PRECISION <span class="text-primary">SHEET METAL</span> FABRICATION</h1>
+<p class="font-body-lg text-body-lg max-w-xl mb-8 border-l-2 border-primary pl-6">
+                    Harnessing high-precision CNC machinery and advanced metal-working techniques to deliver custom industrial ducting and components with micro-tolerance accuracy.
+                </p>
+<div class="flex gap-4 transition-all duration-700 opacity-100 translate-y-0">
+<button class="py-3 px-8 bg-primary text-on-primary font-label-md text-label-md industrial-cut hover:brightness-110 transition-all uppercase tracking-widest">START TECHNICAL CONSULT</button>
+<button class="py-3 px-8 border border-on-primary text-on-primary font-label-md text-label-md hover:bg-on-primary/10 transition-all uppercase tracking-widest">VIEW STANDARDS</button>
+</div>
+</div>
+</section>
+<!-- Specification Bento Grid -->
+<section class="py-24 px-margin-desktop">
+<div class="mb-12">
+<h2 class="font-display-lg text-display-lg text-on-background uppercase">MATERIAL <span class="text-primary">ENGINEERING</span> &amp; TOLERANCES</h2>
+<div class="h-1 w-24 bg-primary mt-2 transition-all duration-700 opacity-100 translate-y-0"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Material Options Card -->
+<div class="md:col-span-2 bg-white p-8 border border-outline-variant bento-card industrial-cut transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">ADVANCED MATERIAL SELECTION</h3>
+<p class="font-body-md text-on-surface-variant">Industrial-grade substrates for high-performance environments.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl">inventory_2</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 border border-outline-variant bg-surface-container-low industrial-cut">
+<h4 class="font-label-md text-label-md text-primary mb-3 font-bold">STAINLESS STEEL</h4>
+<p class="text-sm font-body-md text-on-surface-variant">Grades 304 &amp; 316. Corrosion-resistant solutions for chemical and maritime use.</p>
+</div>
+<div class="p-6 border border-outline-variant bg-surface-container-low industrial-cut">
+<h4 class="font-label-md text-label-md text-primary mb-3 font-bold">ALUMINUM</h4>
+<p class="text-sm font-body-md text-on-surface-variant">High strength-to-weight ratio. Ideal for aerospace and lightweight structural ducting.</p>
+</div>
+<div class="p-6 border border-outline-variant bg-surface-container-low industrial-cut">
+<h4 class="font-label-md text-label-md text-primary mb-3 font-bold">ALUZINC</h4>
+<p class="text-sm font-body-md text-on-surface-variant">Specialized coating providing superior heat reflection and long-term durability.</p>
+</div>
+</div>
+</div>
+<!-- Tolerances Card -->
+<div class="bg-on-background text-on-primary p-8 industrial-cut border-t-4 border-primary shadow-xl transition-all duration-700 opacity-100 translate-y-0">
+<h3 class="font-label-sm text-label-sm text-primary mb-6 uppercase tracking-widest font-bold">ENGINEERING TOLERANCES</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-white/20 pb-2">
+<span class="text-sm font-label-md uppercase opacity-80">CNC Bending</span>
+<span class="font-headline-md text-primary">± 0.25mm</span>
+</div>
+<div class="flex justify-between items-end border-b border-white/20 pb-2">
+<span class="text-sm font-label-md uppercase opacity-80">Laser Cutting</span>
+<span class="font-headline-md text-primary">± 0.10mm</span>
+</div>
+<div class="flex justify-between items-end border-b border-white/20 pb-2">
+<span class="text-sm font-label-md uppercase opacity-80">Assembly Deviation</span>
+<span class="font-headline-md text-primary">± 0.50mm</span>
+</div>
+<div class="flex justify-between items-end border-b border-white/20 pb-2">
+<span class="text-sm font-label-md uppercase opacity-80">Surface Roughness</span>
+<span class="font-headline-md text-primary">Ra 3.2</span>
+</div>
+</div>
+</div>
+<!-- Capability Card -->
+<div class="bg-white p-8 border border-outline-variant bento-card industrial-cut transition-all duration-700 opacity-100 translate-y-0">
+<h3 class="font-headline-md text-headline-md text-on-background mb-6 uppercase">CNC CAPABILITIES</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 p-3 bg-surface-container-low border border-outline-variant industrial-cut">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-label-md text-on-surface-variant">7-Axis Automated Press Brakes</span>
+</li>
+<li class="flex items-start gap-3 p-3 bg-surface-container-low border border-outline-variant industrial-cut">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-label-md text-on-surface-variant">Fiber Laser Cutting up to 25mm</span>
+</li>
+<li class="flex items-start gap-3 p-3 bg-surface-container-low border border-outline-variant industrial-cut">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-label-md text-on-surface-variant">Orbital TIG/MIG Automated Welding</span>
+</li>
+</ul>
+</div>
+<!-- Application Card -->
+<div class="bg-white p-8 border border-outline-variant bento-card md:col-span-2 industrial-cut transition-all duration-700 opacity-100 translate-y-0">
+<h3 class="font-headline-md text-headline-md text-on-background mb-6 uppercase">CUSTOM INDUSTRIAL DUCTING</h3>
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="flex-1">
+<p class="font-body-md text-on-surface-variant mb-6 border-l-2 border-primary pl-4">
+                                Our fabrication workshop specializes in complex ductwork geometries, including double-walled insulated systems and high-pressure exhaust mains.
+                            </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high text-primary text-xs font-label-sm uppercase tracking-widest font-bold">HVAC SYSTEMS</span>
+<span class="px-3 py-1 bg-surface-container-high text-primary text-xs font-label-sm uppercase tracking-widest font-bold">CHEMICAL EXHAUST</span>
+<span class="px-3 py-1 bg-surface-container-high text-primary text-xs font-label-sm uppercase tracking-widest font-bold">DATA CENTER COOLING</span>
+<span class="px-3 py-1 bg-surface-container-high text-primary text-xs font-label-sm uppercase tracking-widest font-bold">CLEANROOM CLASS 100</span>
+</div>
+</div>
+<div class="w-full md:w-56 h-40 bg-surface-container-low border border-dashed border-primary flex items-center justify-center industrial-cut group">
+<span class="material-symbols-outlined text-primary/30 text-7xl group-hover:scale-110 transition-transform duration-500">architecture</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical CTA -->
+<section class="mb-24 px-margin-desktop">
+<div class="bg-on-background p-12 text-on-primary relative overflow-hidden industrial-cut border-l-8 border-primary shadow-2xl">
+<div class="absolute right-0 top-0 h-full w-1/3 opacity-5 pointer-events-none transition-all duration-700 opacity-100 translate-y-0">
+<svg class="h-full w-full fill-white" viewBox="0 0 100 100">
+<path d="M0 0 L100 0 L100 100 Z"></path>
+</svg>
+</div>
+<div class="relative z-10 flex flex-col lg:flex-row justify-between items-center gap-8 transition-all duration-700 opacity-100 translate-y-0">
+<div class="max-w-xl">
+<h2 class="font-display-lg text-display-lg mb-4 text-white uppercase"><span class="text-primary">READY</span> FOR SPECIFICATION?</h2>
+<p class="font-body-lg opacity-80 border-l-2 border-primary pl-6">Our engineering team is available for deep-dive technical reviews of your fabrication blueprints. Ensure compliance and efficiency from day one.</p>
+</div>
+<button class="bg-primary text-on-primary py-4 px-10 font-label-md text-label-md industrial-cut hover:brightness-110 transition-all uppercase tracking-widest shadow-lg">
+                        BOOK TECHNICAL REVIEW
+                    </button>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-low pt-24 pb-8 border-t-2 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="flex items-center gap-4 mb-4"><img alt="8 Point Logo" class="h-10 w-auto object-contain" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center"><span class="text-headline-md font-headline-md font-bold text-on-background">8 POINT</span></div>
+<p class="font-body-md text-on-surface-variant max-w-sm">Leading the marine insulation industry in Singapore since 2004. Quality, Safety, and Engineering excellence in every weld and every layer.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline-variant hover:bg-primary transition-colors group industrial-cut" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline-variant hover:bg-primary transition-colors group industrial-cut" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">work</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Navigation</div>
+<div class="grid grid-cols-2 gap-y-3">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+<a class="font-body-md text-primary font-semibold" href="services.html">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="projects.html">Projects</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="certifications.html">Certifications</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Facilities</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Newsletter</div>
+<p class="font-body-md text-on-surface-variant">Stay updated with our latest maritime engineering projects and industry news.</p>
+<div class="flex gap-2">
+<input class="bg-white border border-outline-variant p-3 text-on-surface flex-grow focus:ring-1 focus:ring-primary industrial-cut font-body-md" placeholder="Email Address" type="email">
+<button class="bg-primary text-on-primary px-6 py-2 hover:brightness-110 industrial-cut font-label-md tracking-widest">JOIN</button>
+</div>
+</div>
+</div>
+<div class="mt-20 border-t border-outline-variant px-margin-desktop max-w-container-max mx-auto py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">© 2024 8 Point Engineering. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-4');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.bento-card, section > div > div').forEach(card => {
+        card.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-700');
+        observer.observe(card);
+    });
+</script>
+
+
+
+
+
+
+<script src="nav.js"></script></body></html>

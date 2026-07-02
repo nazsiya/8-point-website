@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Request Quote | 8 Point Engineering</title>
+<!-- Google Fonts: Barlow Condensed & Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LeH1yYtAAAAAIStBJ7QE0rXiMXY9A4iQVV4RdJn"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#0d1c2e",
+                    "inverse-surface": "#2c3134",
+                    "tertiary-container": "#57657a",
+                    "on-primary-fixed": "#410007",
+                    "surface": "#f6fafe",
+                    "outline": "#906f6e",
+                    "on-background": "#171c1f",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#dae2fd",
+                    "primary": "#9e001f",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "slate-gray": "#475569",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "surface-dim": "#d6dade",
+                    "secondary-fixed": "#dae2fd",
+                    "secondary": "#565e74",
+                    "industrial-red": "#c8102e",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f0f4f8",
+                    "primary-fixed": "#ffdad8",
+                    "surface-container-high": "#e4e9ed",
+                    "on-tertiary-fixed-variant": "#3a485b",
+                    "tertiary": "#3f4d61",
+                    "on-surface": "#171c1f",
+                    "on-primary-container": "#ffdad8",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#d5e3fc",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#e5bdbb",
+                    "primary-container": "#c8102e",
+                    "tertiary-fixed-dim": "#b9c7df",
+                    "inverse-on-surface": "#edf1f5",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#bf0229",
+                    "background": "#f6fafe",
+                    "on-tertiary-container": "#d4e3fb",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#5c403f",
+                    "on-secondary-container": "#5c647a",
+                    "deep-navy": "#0f172a",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "surface-ice": "#f8fafc",
+                    "on-primary-fixed-variant": "#92001c",
+                    "surface-bright": "#f6fafe",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#ffb3b1",
+                    "surface-container-highest": "#dfe3e7",
+                    "surface-variant": "#dfe3e7",
+                    "surface-container": "#eaeef2",
+                    "outline-silver": "#cbd5e1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#131b2e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Barlow Condensed"],
+                    "headline-lg": ["Barlow Condensed"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-xl": ["Barlow Condensed"],
+                    "headline-lg-mobile": ["Barlow Condensed"],
+                    "label-md": ["JetBrains Mono"],
+                    "display-lg": ["Barlow Condensed"],
+                    "label-caps": ["Barlow Condensed"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .industrial-cut {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+        }
+        .industrial-cut-reverse {
+            clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(200, 16, 46, 0.15);
+        }
+        .power-border {
+            border-left: 4px solid #c8102e;
+        }
+        .dot-grid {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] transition-all duration-300" id="site-header">
+<nav class="flex justify-between items-center w-full h-20 px-4 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt5CzQbmQFOOmy15eE8sGbPyVUpIklQbjt3dcGbmFrbxsEJmdJhHG3JvwRhT0ZEs6YyTHPigwzZ9dWmuJoVGOD4KOYvm7d2ndU2U-LQPZBsqd2cx74Xp46yN27hFFhWFs-xRCHKSgaklNy-bYrWkrgK_M1GDvTYhabfFBReKnaann1_wqt8RZCzAIDoKNh2xllG7tgOn7CFS963hVf83pTbcTHIUZp8mti6r4oJQ3hSaNERvtMFBm_VjFyp0Wetpi6K7fZzkDNNdU">
+<a href="index.html"><span class="text-2xl font-extrabold tracking-tight text-[#0f172a] uppercase" style="font-family:'Barlow Condensed',sans-serif;">8 POINT</span></a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a data-page="index.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="index.html">Home</a>
+<a data-page="about.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="about.html">About</a>
+<a data-page="services.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="services.html">Services</a>
+<a data-page="projects.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="projects.html">Projects</a>
+<a data-page="certifications.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="certifications.html">Certifications</a>
+<a data-page="contact.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-3">
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#0f172a]" aria-label="Open menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+<a href="request-quote.html" class="bg-[#c8102e] text-white text-sm font-bold px-6 py-2.5 uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);font-family:'Barlow Condensed',sans-serif;">REQUEST QUOTE</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#e2e8f0] px-4 py-4 space-y-3 shadow-lg">
+<a href="index.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Home</a>
+<a href="about.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">About</a>
+<a href="services.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Services</a>
+<a href="projects.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Projects</a>
+<a href="certifications.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Certifications</a>
+<a href="contact.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Contact Us</a>
+<a href="request-quote.html" class="block text-sm font-bold text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Request Quote</a>
+</div>
+</header>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+<!-- Background Accents -->
+<div class="absolute top-0 right-0 w-1/3 h-full dot-grid opacity-20 -z-10"></div>
+<!-- Hero Section -->
+<div class="mb-16 border-l-4 border-industrial-red pl-8">
+<span class="font-label-md text-industrial-red uppercase tracking-widest mb-2 block">Engineering Excellence</span>
+<h1 class="font-headline-lg text-headline-lg uppercase mb-4">Request a Technical Quote</h1>
+<p class="max-w-2xl text-body-lg text-slate-gray">
+                Provide your project specifications below. Our engineering team will review your requirements and provide a detailed structural and financial assessment within 48 hours.
+            </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Multi-step Form -->
+<div class="lg:col-span-8">
+<form class="space-y-8" id="quoteForm">
+<!-- Step 1: Project Identity -->
+<section class="bg-surface-container-lowest p-8 border border-outline-silver industrial-cut relative">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-10 h-10 bg-industrial-red flex items-center justify-center text-on-primary font-bold">01</div>
+<h2 class="font-headline-md text-headline-md uppercase">Project Identity</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Project Name</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="e.g. Terminal 4 Piping Upgrade" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Service Category</label>
+<select class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all">
+<option>Industrial Insulation</option>
+<option>Mechanical Piping</option>
+<option>Structural Fabrication</option>
+<option>Maritime Maintenance</option>
+<option>Refinery Services</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Step 2: Technical Specifications -->
+<section class="bg-surface-container-lowest p-8 border border-outline-silver industrial-cut relative">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-10 h-10 bg-industrial-red flex items-center justify-center text-on-primary font-bold">02</div>
+<h2 class="font-headline-md text-headline-md uppercase">Technical Specs</h2>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Scope of Work</label>
+<textarea class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="Detail the technical requirements, material constraints, and environmental factors..." rows="4"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Material Type</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="Stainless, Carbon, etc." type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Estimated Weight (kg)</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="0.00" type="number">
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Desired Deadline</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" type="date">
+</div>
+</div>
+<div class="border-2 border-dashed border-outline-silver p-8 text-center bg-surface hover:bg-surface-container-low transition-colors cursor-pointer industrial-cut group">
+<span class="material-symbols-outlined text-4xl text-outline mb-2 group-hover:text-industrial-red">upload_file</span>
+<p class="font-label-md uppercase text-slate-gray">Upload CAD Drawings or Blueprints (PDF, DWG)</p>
+</div>
+</div>
+</section>
+<!-- Step 3: Contact Information -->
+<section class="bg-surface-container-lowest p-8 border border-outline-silver industrial-cut relative">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-10 h-10 bg-industrial-red flex items-center justify-center text-on-primary font-bold">03</div>
+<h2 class="font-headline-md text-headline-md uppercase">Contact Details</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Full Name</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="John Doe" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Company Name</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="Engineering Solutions Ltd" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Work Email</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="j.doe@company.com" type="email">
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Phone Number</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="+65 6265 8888" type="tel">
+</div>
+</div>
+</section>
+<div class="flex justify-end gap-4">
+<button class="px-8 py-4 font-label-md uppercase tracking-wider text-slate-gray hover:text-on-surface transition-colors" type="reset">Clear Form</button>
+<button class="w-full bg-industrial-red text-on-primary font-headline-md text-headline-md py-5 industrial-cut hover:brightness-110 transition-all uppercase tracking-widest shadow-lg" type="submit">
+                            Submit Technical Quote Request
+                        </button>
+</div>
+</form>
+</div>
+<!-- Right Column: Sidebar -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- Contact Card -->
+<div class="bg-deep-navy text-on-primary p-8 industrial-cut relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-industrial-red opacity-10 rotate-45 translate-x-16 -translate-y-16"></div>
+<h3 class="font-headline-md text-headline-md uppercase mb-6 border-b pb-4 border-outline-variant">Direct Contact</h3>
+<ul class="space-y-6 relative z-10">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-industrial-red">location_on</span>
+<div>
+<p class="font-label-md uppercase text-slate-gray">Main Headquarters</p>
+<p class="font-body-md">No. 8 Penjuru Place, #01-14,<br>2-8 Penjuru Tech Hub, Singapore 608780</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-industrial-red">mail</span>
+<div>
+<p class="font-label-md uppercase text-slate-gray">Engineering Support</p>
+<p class="font-body-md">info@8point.com.sg</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-industrial-red">call</span>
+<div>
+<p class="font-label-md uppercase text-slate-gray">24/7 Operations</p>
+<p class="font-body-md">+65 6265 8888</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Trust Badges -->
+<div class="bg-surface-container-high p-8 border-l-4 border-industrial-red">
+<h4 class="font-label-md uppercase mb-4 text-on-surface">Certified Compliance</h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface p-4 text-center border border-outline-silver">
+<p class="font-headline-md text-headline-md mb-0">ISO</p>
+<p class="font-label-sm text-slate-gray uppercase">9001:2015</p>
+</div>
+<div class="bg-surface p-4 text-center border border-outline-silver">
+<p class="font-headline-md text-headline-md mb-0">ASME</p>
+<p class="font-label-sm text-slate-gray uppercase">Section VIII</p>
+</div>
+</div>
+</div>
+<!-- Process Guide -->
+<div class="p-8 border border-outline-silver bg-surface-ice">
+<h4 class="font-label-md uppercase mb-6 text-industrial-red tracking-widest">Our Quote Process</h4>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-industrial-red flex items-center justify-center font-bold text-xs text-industrial-red">1</div>
+<p class="text-sm">Submit your specs through this secure encrypted portal.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-industrial-red flex items-center justify-center font-bold text-xs text-industrial-red">2</div>
+<p class="text-sm">Project manager performs a structural feasibility review.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-industrial-red flex items-center justify-center font-bold text-xs text-industrial-red">3</div>
+<p class="text-sm">Receive a line-item technical quote and timeline.</p>
+</div>
+</div>
+</div>
+<!-- Promotional Image -->
+<div class="industrial-cut h-64 relative overflow-hidden group">
+<div class="absolute inset-0 bg-deep-navy opacity-40 group-hover:opacity-20 transition-opacity z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A high-angle, cinematic photograph of a clean, brightly lit industrial fabrication facility. Large stainless steel pipes and high-pressure valves are arranged on technical scaffolding. Engineers in high-visibility vests and protective gear are examining blue prints in the foreground. The lighting is crisp, professional, and high-key, reflecting off polished metallic surfaces. The color palette emphasizes industrial red, slate gray, and clean white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS-dmNwPKY2z_1EdZId4HwrwSWG5-BExB2w6dKkffRo1jIire6RxX0wls0bDeq5py_pzFeQjp5KLk8onrh6mUoAG81k8HecrHCVa2nspESIx4GB6Pv8SAnSmEyBRLupSqAUCjowh9BA0B3jQ8x9mnGLAibiTIFhhRAvT4kuM6slCc085brWiznUyLJBHyk9rU19WkqlGYI12GC7xHsijZrIUV2HhXF5CMRPrmPWq6Q5lmMQgVoi4LSeZoGCzPoXvjc6ZBUgtVFMTY">
+<div class="absolute bottom-4 left-4 z-20">
+<span class="font-label-md text-on-primary bg-industrial-red px-2 py-1 uppercase">Operations</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t-2 border-primary pt-24 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-20">
+<div class="space-y-8">
+<div class="flex items-center gap-4"><img alt="8 Point Industrial Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLs10XkApnbcvaXShN91mtriyrwJICCebYZN8Bnr4gt_Y9R10atzakcom9aGqdxMsZZvA7GyNICLbpanSD_rn7cXqMU46o0Bh7jbzwl2is8j5Bl2hc4ldEUkCeo1BDxzSkSuQjJP0xgTVQYtSGRNmGMqlc1AeLVYgz5DoxNy9Ci9o6CVGTHD-NdS0ARGdGZRU5PZK_1kic5IsWe-S_5tI1HSUdVx5J1VZjcG1Ovpcn2Bmd-X1cD9_rsSILw"><span class="text-2xl font-headline-xl font-bold tracking-tight text-on-background uppercase">8 POINT</span></div>
+<p class="text-body-md text-on-surface-variant max-w-xs border-l-2 border-industrial-red pl-6 leading-relaxed">
+                    Pioneering industrial solutions with a focus on safety, efficiency, and engineering precision since 1999.
+                </p>
+<div class="flex gap-4"><a class="w-10 h-10 flex items-center justify-center border border-outline hover:bg-surface-container transition-all" href="#"><span class="material-symbols-outlined text-deep-navy">share</span></a><a class="w-10 h-10 flex items-center justify-center border border-outline hover:bg-surface-container transition-all" href="#"><span class="material-symbols-outlined text-deep-navy">alternate_email</span></a></div>
+</div>
+<div class="space-y-8">
+<h4 class="font-label-caps text-label-md text-industrial-red font-bold tracking-widest uppercase mb-6">QUICK LINKS</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-on-surface-variant transition-colors hover:text-industrial-red" href="index.html">Home</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant transition-colors hover:text-industrial-red" href="about.html">About Us</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant transition-colors hover:text-industrial-red" href="services.html">Services</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant transition-colors hover:text-industrial-red" href="projects.html">Projects</a></li>
+</ul>
+</div>
+<div class="space-y-8">
+<h4 class="font-label-caps text-label-md text-industrial-red font-bold tracking-widest uppercase mb-6">RESOURCES</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-on-surface-variant transition-colors hover:text-industrial-red" href="certifications.html">Certifications</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant transition-colors hover:text-industrial-red" href="services.html">Facilities</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant transition-colors hover:text-industrial-red" href="#">Safety Protocols</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant transition-colors hover:text-industrial-red" href="#">Career Opportunities</a></li>
+</ul>
+</div>
+<div class="space-y-8">
+<h4 class="font-label-caps text-label-md text-industrial-red font-bold tracking-widest uppercase mb-6">HQ ADDRESS</h4>
+            <p class="font-body-md text-on-surface-variant leading-loose">No. 8 Penjuru Place, #01-14,<br>2-8 Penjuru Tech Hub, Singapore 608780</p>
+<div class="pt-2">
+<span class="font-label-sm text-label-sm bg-surface-container-high px-3 py-1 text-deep-navy uppercase font-bold tracking-widest">Global HQ</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-12 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-[0.2em]">© 2024 8 POINT ENGINEERING. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-10">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple form interaction logic
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            
+            submitBtn.innerText = 'PROCESSING REQUEST...';
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+
+            setTimeout(() => {
+                alert('Thank you! Your quote request has been submitted. A specialist will contact you shortly.');
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                e.target.reset();
+            }, 1500);
+        });
+
+        // Hover effect for inputs
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').classList.replace('text-slate-gray', 'text-industrial-red');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label').classList.replace('text-industrial-red', 'text-slate-gray');
+            });
+        });
+    </script>
+
+
+<script src="nav.js"></script></body></html>

@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contact Us | 8 Point Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LeH1yYtAAAAAIStBJ7QE0rXiMXY9A4iQVV4RdJn"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c8102e",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c8102e",
+                        "on-primary-container": "#ffffff",
+                        "background": "#ffffff",
+                        "on-background": "#0f172a",
+                        "surface": "#f8fafc",
+                        "on-surface": "#0f172a",
+                        "surface-variant": "#e2e8f0",
+                        "on-surface-variant": "#475569",
+                        "outline": "#cbd5e1",
+                        "outline-variant": "#e2e8f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-high": "#e2e8f0",
+                        "surface-container-highest": "#f8fafc",
+                        "deep-navy": "#0f172a",
+                        "industrial-red": "#c8102e",
+                        "slate-gray": "#475569"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Barlow Condensed"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Barlow Condensed"],
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg": ["Barlow Condensed"],
+                        "headline-md": ["Barlow Condensed"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Barlow Condensed"],
+                        "headline-lg-mobile": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .industrial-cut {
+            clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%);
+        }
+        .power-border-left {
+            border-left: 4px solid #c8102e;
+        }
+        .dot-grid {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+
+        .reveal-on-scroll {
+            opacity: 0;
+        }
+
+        .reveal-on-scroll.is-visible {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hover-scale {
+            transition: transform 0.2s ease-in-out;
+        }
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] transition-all duration-300" id="site-header">
+<nav class="flex justify-between items-center w-full h-20 px-4 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt5CzQbmQFOOmy15eE8sGbPyVUpIklQbjt3dcGbmFrbxsEJmdJhHG3JvwRhT0ZEs6YyTHPigwzZ9dWmuJoVGOD4KOYvm7d2ndU2U-LQPZBsqd2cx74Xp46yN27hFFhWFs-xRCHKSgaklNy-bYrWkrgK_M1GDvTYhabfFBReKnaann1_wqt8RZCzAIDoKNh2xllG7tgOn7CFS963hVf83pTbcTHIUZp8mti6r4oJQ3hSaNERvtMFBm_VjFyp0Wetpi6K7fZzkDNNdU">
+<a href="index.html"><span class="text-2xl font-extrabold tracking-tight text-[#0f172a] uppercase" style="font-family:'Barlow Condensed',sans-serif;">8 POINT</span></a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a data-page="index.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="index.html">Home</a>
+<a data-page="about.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="about.html">About</a>
+<a data-page="services.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="services.html">Services</a>
+<a data-page="projects.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="projects.html">Projects</a>
+<a data-page="certifications.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="certifications.html">Certifications</a>
+<a data-page="contact.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-3">
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#0f172a]" aria-label="Open menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+<a href="request-quote.html" class="bg-[#c8102e] text-white text-sm font-bold px-6 py-2.5 uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);font-family:'Barlow Condensed',sans-serif;">REQUEST QUOTE</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#e2e8f0] px-4 py-4 space-y-3 shadow-lg">
+<a href="index.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Home</a>
+<a href="about.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">About</a>
+<a href="services.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Services</a>
+<a href="projects.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Projects</a>
+<a href="certifications.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Certifications</a>
+<a href="contact.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Contact Us</a>
+<a href="request-quote.html" class="block text-sm font-bold text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Request Quote</a>
+</div>
+</header>
+<!-- Hero Section -->
+<header class="relative pt-40 pb-24 overflow-hidden dot-grid">
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+<div class="max-w-3xl">
+<div class="flex items-center gap-2 mb-4 animate-fade-in-up">
+<span class="w-12 h-1 bg-industrial-red"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-industrial-red">Get in Touch</span>
+</div>
+<h1 class="font-display-lg text-display-lg mb-6 text-on-surface uppercase animate-fade-in-up stagger-1">ENGINEERING PRECISION. <br><span class="text-industrial-red">GLOBAL RESPONSE.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed animate-fade-in-up stagger-2">
+                    Connecting marine, offshore, and industrial sectors with certified engineering excellence. Reach out to our Singapore HQ or regional offices for integrated solutions.
+                </p>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop pb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Contact Info Column -->
+<div class="lg:col-span-5 space-y-8">
+<!-- HQ Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-8 industrial-cut power-border-left shadow-sm reveal-on-scroll">
+<h3 class="font-headline-md text-headline-md mb-6 uppercase text-deep-navy">Headquarters</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-industrial-red" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-caps text-label-sm uppercase text-on-surface-variant mb-1 tracking-widest">Office Address</p>
+<p class="font-body-lg text-body-lg font-semibold text-deep-navy">No. 8 Penjuru Place, #01-14,<br>2-8 Penjuru Tech Hub, Singapore 608780</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-industrial-red" data-icon="call">call</span>
+<div>
+<p class="font-label-caps text-label-sm uppercase text-on-surface-variant mb-1 tracking-widest">Phone Enquiries</p>
+<p class="font-body-lg text-body-lg font-semibold text-deep-navy">+65 6265 8888<br>+65 6265 9999</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-industrial-red" data-icon="mail">mail</span>
+<div>
+<p class="font-label-caps text-label-sm uppercase text-on-surface-variant mb-1 tracking-widest">Email Support</p>
+<p class="font-body-lg text-body-lg font-semibold text-deep-navy">info@8point.com.sg<br>solutions@8point.com.sg</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Section -->
+<div class="h-[400px] bg-surface-container-high border border-outline-variant industrial-cut overflow-hidden group reveal-on-scroll stagger-1">
+<div class="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-700">
+<img class="w-full h-full object-cover" data-alt="A professional high-contrast architectural map of Singapore's industrial district near Penjuru." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUlnFQOj32rwj6SraKI4g8FnRbMKZ43JexlxBreT5401mh6PF_qCRm3uBXSBxK6XzfGCajmfAA2ME5bxi0CCs2Vff-HuRwYJfFcY18qTcueTo23ksEhy5DXNS0NIYiaeUlbi1HRgEMvtkxe-cneJtE-KfGFdTTImkxE1AsiaegxpNWJs_N6dVJ-hekIozE9W8ICPkawb-DggoUj4rKhuydT2MASMz4i8PYQSmUp6TJXIq_EB7Zt5FipGF1BDzrk51KR_gkuVN-Oq0">
+<div class="absolute inset-0 bg-industrial-red/5 pointer-events-none group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+</div>
+<!-- Inquiry Form Column -->
+<div class="lg:col-col-span-7 lg:col-start-6 lg:col-end-13">
+<div class="bg-surface-container-lowest border border-outline-variant p-10 industrial-cut shadow-lg hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-shadow reveal-on-scroll stagger-2">
+<h3 class="font-headline-md text-headline-md mb-2 uppercase text-deep-navy">Project Inquiry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Submit your technical requirements and our engineering team will respond within 24 hours.</p>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-label-caps text-label-sm uppercase text-deep-navy font-bold tracking-widest">Full Name</label>
+<input class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="John Doe" type="text">
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-sm uppercase text-deep-navy font-bold tracking-widest">Email Address</label>
+<input class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="john@company.com" type="email">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-label-caps text-label-sm uppercase text-deep-navy font-bold tracking-widest">Company Name</label>
+<input class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="Engineering Ltd." type="text">
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-sm uppercase text-deep-navy font-bold tracking-widest">Inquiry Type</label>
+<select class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all appearance-none">
+<option>Electrical Instrumentation &amp; Services</option>
+<option>Piping Services</option>
+<option>Industrial Solutions</option>
+<option>Insulation &amp; Cladding</option>
+<option>Other</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-sm uppercase text-deep-navy font-bold tracking-widest">Message / Technical Requirements</label>
+<textarea class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all resize-none" placeholder="Describe your project scope..." rows="5"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1 text-primary focus:ring-primary rounded-sm border-outline-variant" type="checkbox">
+<span class="text-label-sm font-label-sm text-on-surface-variant">I consent to the processing of my data in accordance with the Privacy Policy for the purpose of handling this inquiry.</span>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-12 py-4 industrial-cut uppercase font-label-caps text-label-caps tracking-widest hover:brightness-110 hover-scale shadow-lg transition-all flex items-center justify-center gap-2" type="submit">
+                            Send Inquiry
+                            <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</form>
+</div>
+<!-- Certifications Strip -->
+<div class="mt-12 flex flex-wrap items-center justify-between gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500 reveal-on-scroll">
+<img alt="ISO 9001 Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB7BOvB56Qf6OximKcQJoXfur5HhnIferCdlgXasb_9OHACjYlczYsXopKUFGLMOYBbCcvtwXYfUJyD6OuggTACj43rWrQ1MxyHUfkhrQYBfx1ewzPprR7Fz0JHEgw7Nr6TsyrWk25gxjzjCs0fb5qpavnMIGaA9G0XPRmP3Gea4SvM4V4FNb-aHA09047Pl40QB6Li4Cwa0cIrQVVGU-b6_rYtOAPu7Iahy8qQVwtcy61THFBoTof2khm-ERuj6xB-4u8qf59YUg">
+<img alt="OHSAS 18001 Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGVmtLeslba74SgvArLCUd6Au_SySJMhBLBcM14Zcvxz0BAZNPWvihArQlChMORsT7KMVlw3mExouyABufoUP_6iy9cZ-w4_4CV8XlPwkNn_Iaa8_yzjnlbHMpyp2AEba4es8Fz8Y0sMB7nEHSs0sFIszv9IU-4gnROMH8sq1hL0hsOA6YbG12mwxr8z4rUE-64yxd0uLyN2udI4_qmKNJv8p3_gSJtSWKBOv1AGe-YIwPSUbvQEgKqonKTzmYICj7xTc-flsw38s">
+<img alt="Maritime Engineering Bureau" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs-vkgE-2UoD5O-9g8T0_E55OR2KTvSpwvoUvHbqBkIsthwEaYW6D_2FlOdlqbo1cuIKb3jrvBwkrSucE95fxYz4_WdFzOp2cNA83UWrokjuaTrx5BPIhVzmgcf92V_eC3OxXY45-GOeU-q5lsFAASFKvd0G6vLxysvYkraeS3GoL77t0lh63KMZTsEVbOqdRpIIVmbXLSMPzJrD4whRhg6AhpD7S8XzdsWSd7ByiWAR6KKEALxPyvrHFWVgnwR74JYP30SKVCWHM">
+<img alt="Safety Council Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9FCUPnEcwJ3voKzxpxj5qIrtW9Bn6DjOoC8z95LeAtx3mUpw-3ND5g-myOGvkq8XTTnTcCY9IlwsAF3WTFb-b7Ziu90Hq-h5J16ZVjsLn78WJUXRI9BKrFWij33BlfAyOB61IK4-vBGSrQ9guBiR4UCNgh2qxYkWOEphtRYKzxCXPoxkLW61YBdzyA70MeDOMH0yc0Y4YCRfBJUSJxH7cYtT4kkVr3pibpvB7kCZ2Rg6V4RBVd49d64BUvazy-Awm-AaCchR_opM">
+</div>
+</div>
+</div>
+</main>
+<!-- Global Offices / Locations -->
+<section class="bg-surface-container-low py-24 border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-headline-xl text-headline-xl mb-12 uppercase text-deep-navy reveal-on-scroll">Our Global Presence</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Location 1 -->
+<div class="bg-surface-container-lowest p-6 industrial-cut border border-outline-variant group hover:border-primary hover-scale transition-all reveal-on-scroll">
+<h4 class="font-label-caps text-label-md text-primary uppercase mb-4 tracking-widest font-bold">Singapore HQ</h4>
+<p class="font-body-md text-body-md text-on-surface mb-4">No. 8 Penjuru Place, #01-14,<br>2-8 Penjuru Tech Hub, Singapore 608780</p>
+<a class="inline-flex items-center text-label-caps text-label-sm uppercase tracking-widest text-on-surface-variant group-hover:text-primary transition-colors" href="#">
+                        View Direction
+                        <span class="material-symbols-outlined text-sm ml-2" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Location 2 -->
+<div class="bg-surface-container-lowest p-6 industrial-cut border border-outline-variant group hover:border-primary hover-scale transition-all reveal-on-scroll stagger-1">
+<h4 class="font-label-caps text-label-md text-primary uppercase mb-4 tracking-widest font-bold">Batam, Indonesia</h4>
+<p class="font-body-md text-body-md text-on-surface mb-4">Kawasan Industri Terpadu Kabil,<br>Jl. Hang Kesturi, Batam, Indonesia</p>
+<a class="inline-flex items-center text-label-caps text-label-sm uppercase tracking-widest text-on-surface-variant group-hover:text-primary transition-colors" href="#">
+                        View Direction
+                        <span class="material-symbols-outlined text-sm ml-2" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Location 3 -->
+<div class="bg-surface-container-lowest p-6 industrial-cut border border-outline-variant group hover:border-primary hover-scale transition-all reveal-on-scroll stagger-2">
+<h4 class="font-label-caps text-label-md text-primary uppercase mb-4 tracking-widest font-bold">Dubai, UAE</h4>
+<p class="font-body-md text-body-md text-on-surface mb-4">Dubai Maritime City, Port Rashid,<br>District 1, Dubai, United Arab Emirates</p>
+<a class="inline-flex items-center text-label-caps text-label-sm uppercase tracking-widest text-on-surface-variant group-hover:text-primary transition-colors" href="#">
+                        View Direction
+                        <span class="material-symbols-outlined text-sm ml-2" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer (Standardized to SCREEN_96) -->
+<footer class="border-t-2 border-primary pt-24 pb-12 bg-surface-container-low"><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto"><div class="space-y-6"><div class="flex items-center gap-4 mb-4"><img alt="8 Point Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt5CzQbmQFOOmy15eE8sGbPyVUpIklQbjt3dcGbmFrbxsEJmdJhHG3JvwRhT0ZEs6YyTHPigwzZ9dWmuJoVGOD4KOYvm7d2ndU2U-LQPZBsqd2cx74Xp46yN27hFFhWFs-xRCHKSgaklNy-bYrWkrgK_M1GDvTYhabfFBReKnaann1_wqt8RZCzAIDoKNh2xllG7tgOn7CFS963hVf83pTbcTHIUZp8mti6r4oJQ3hSaNERvtMFBm_VjFyp0Wetpi6K7fZzkDNNdU"><span class="text-headline-md font-headline-md font-bold text-on-background uppercase">8 POINT</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Leading the marine insulation industry in Singapore since 2004. Quality, Safety, and Engineering excellence in every weld and every layer.</p><div class="flex gap-4"><a class="w-10 h-10 flex items-center justify-center bg-white border border-outline-variant hover:bg-primary transition-colors group" href="#"><span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">share</span></a><a class="w-10 h-10 flex items-center justify-center bg-white border border-outline-variant hover:bg-primary transition-colors group" href="#"><span class="material-symbols-outlined text-on-surface group-hover:text-on-primary">work</span></a></div></div><div class="space-y-6"><div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Navigation</div><div class="grid grid-cols-2 gap-y-3"><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a><a class="font-body-md text-primary font-semibold" href="services.html">Services</a><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="projects.html">Projects</a><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="certifications.html">Certifications</a><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Safety</a></div></div><div class="space-y-6"><div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Newsletter</div><p class="font-body-md text-on-surface-variant">Stay updated with our latest maritime engineering projects and industry news.</p><div class="flex gap-2"><input class="bg-white border border-outline-variant p-3 text-on-surface flex-grow focus:ring-1 focus:ring-primary industrial-cut" placeholder="Email Address" type="email"><button class="bg-primary text-on-primary px-6 py-2 hover:brightness-110 industrial-cut font-label-md">JOIN</button></div></div></div><div class="mt-20 border-t border-outline-variant px-margin-desktop max-w-container-max mx-auto py-8 flex flex-col md:flex-row justify-between items-center gap-4"><p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">© 2024 8 Point Engineering. All rights reserved.</p><div class="flex gap-8"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Privacy Policy</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Terms of Service</a></div></div></footer>
+<script>
+        // Reveal on scroll logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Micro-interactions for form focus
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                const label = input.parentElement.querySelector('label');
+                if (label) label.classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                const label = input.parentElement.querySelector('label');
+                if (label) label.classList.remove('text-primary');
+            });
+        });
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Form submission animation placeholder
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="sync">sync</span> Processing...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> Sent Successfully';
+                btn.classList.replace('bg-primary', 'bg-green-600');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.replace('bg-green-600', 'bg-primary');
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+<script src="nav.js"></script></body></html>

@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .industrial-cut {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+        }
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .dot-grid {
+            background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c8102e", 
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c8102e",
+                        "on-primary-container": "#ffffff",
+                        "background": "#ffffff",
+                        "on-background": "#0f172a",
+                        "surface": "#f8fafc",
+                        "on-surface": "#0f172a",
+                        "surface-variant": "#e2e8f0",
+                        "on-surface-variant": "#475569",
+                        "outline": "#cbd5e1",
+                        "outline-variant": "#e2e8f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-high": "#e2e8f0",
+                        "surface-container-highest": "#f8fafc",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Barlow Condensed"],
+                        "label-caps": ["Barlow Condensed"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Barlow Condensed"],
+                        "headline-lg": ["Barlow Condensed"],
+                        "headline-xl": ["Barlow Condensed"],
+                        "display-lg": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-background antialiased selection:bg-primary selection:text-on-primary">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] transition-all duration-300" id="site-header">
+<nav class="flex justify-between items-center w-full h-20 px-4 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-10 w-auto" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center">
+<a href="index.html"><span class="text-2xl font-extrabold tracking-tight text-[#0f172a] uppercase" style="font-family:'Barlow Condensed',sans-serif;">8 POINT</span></a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a data-page="index.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="index.html">Home</a>
+<a data-page="about.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="about.html">About</a>
+<a data-page="services.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="services.html">Services</a>
+<a data-page="projects.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="projects.html">Projects</a>
+<a data-page="certifications.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="certifications.html">Certifications</a>
+<a data-page="contact.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-3">
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#0f172a]" aria-label="Open menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+<a href="request-quote.html" class="bg-[#c8102e] text-white text-sm font-bold px-6 py-2.5 uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);font-family:'Barlow Condensed',sans-serif;">REQUEST QUOTE</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#e2e8f0] px-4 py-4 space-y-3 shadow-lg">
+<a href="index.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Home</a>
+<a href="about.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">About</a>
+<a href="services.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Services</a>
+<a href="projects.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Projects</a>
+<a href="certifications.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Certifications</a>
+<a href="contact.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Contact Us</a>
+<a href="request-quote.html" class="block text-sm font-bold text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Request Quote</a>
+</div>
+</header>
+<div class="flex min-h-screen pt-20">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col w-72 bg-surface border-r border-outline-variant sticky top-20 h-[calc(100vh-80px)] overflow-y-auto">
+<div class="p-8">
+<h2 class="font-headline-md text-primary uppercase">Industrial Services</h2>
+<p class="font-label-sm text-on-surface-variant/70 uppercase">Precision Engineering Suite</p>
+</div>
+<nav class="flex-1">
+<ul class="space-y-0.5 px-4">
+<li class=""><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-label-md hover:bg-surface-container-high hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">thermostat</span>HOT &amp; COLD INSULATION</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-label-md hover:bg-surface-container-high hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">ac_unit</span>CRYOGENIC SYSTEMS</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-label-md hover:bg-surface-container-high hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">layers</span>PIPELINE JACKETS</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-label-md hover:bg-surface-container-high hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">precision_manufacturing</span>SHEET METAL FABRICATION</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-label-md hover:bg-surface-container-high hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">volume_off</span>ACOUSTIC CONTROL</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-label-md hover:bg-surface-container-high hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">local_fire_department</span>FIRE PROTECTION</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-label-md hover:bg-surface-container-high hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">directions_boat</span>MARINE REFURBISHMENT</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-label-md hover:bg-surface-container-high hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">engineering</span>ON-SITE SUPERVISION</a></li>
+<li class=""><a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary font-bold font-label-md industrial-cut" href="#"><span class="material-symbols-outlined text-sm">analytics</span>TECHNICAL AUDITS</a></li>
+</ul>
+</nav>
+<div class="p-6">
+<button class="w-full border-2 border-primary text-primary font-label-caps py-3 industrial-cut hover:bg-primary hover:text-on-primary transition-all uppercase tracking-widest">Download Catalog</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 bg-surface-container-low">
+<!-- Hero Section -->
+<section class="relative min-h-[500px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Technical Audit Thermal Imaging" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80">
+<div class="absolute inset-0 bg-gradient-to-r from-on-background via-on-background/80 to-on-background/40"></div>
+<div class="absolute inset-0 dot-grid opacity-20"></div>
+</div>
+<div class="relative z-10 px-margin-desktop py-16 max-w-4xl">
+<div class="inline-flex items-center gap-3 px-4 py-1.5 bg-white shadow-sm border-l-4 border-primary mb-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">Service Specialization</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-white mb-6 uppercase">Technical Audits &amp; <span class="text-primary">Integrity Inspections</span></h1>
+<p class="font-body-lg text-body-lg text-white/80 max-w-2xl border-l-2 border-primary pl-6">
+                    Precision-driven diagnostic solutions identifying thermal inefficiencies and structural risks before they impact your operational uptime. Leveraging advanced thermography and non-destructive testing.
+                </p>
+<div class="mt-10 flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-label-md industrial-cut hover:brightness-110 transition-all uppercase tracking-widest">Schedule Inspection</button>
+<button class="border-2 border-white text-white px-8 py-4 font-label-md industrial-cut hover:bg-white hover:text-on-background transition-all uppercase tracking-widest">Download Protocols</button>
+</div>
+</div>
+</section>
+<!-- Diagnostic Grid -->
+<section class="px-margin-desktop py-24 max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Core Focus: Thermal Imaging -->
+<div class="md:col-span-8 bg-white p-10 border border-outline-variant relative overflow-hidden bento-card industrial-cut border-l-4 border-l-primary">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">thermostat</span>
+<h3 class="font-headline-lg text-headline-lg text-on-background mb-4 uppercase">Energy Loss Analysis</h3>
+<p class="font-body-md text-on-surface-variant max-w-xl mb-8">
+                            Utilizing high-resolution infrared thermography, our auditors pinpoint heat leakages in real-time. We provide a quantitative report on thermal bridging and energy dissipation, translated directly into operational cost savings.
+                        </p>
+<div class="grid grid-cols-2 gap-8 border-t border-outline-variant pt-8">
+<div>
+<h4 class="font-label-md text-primary mb-2 uppercase">Precision Level</h4>
+<p class="font-body-md">±0.5°C Thermal Sensitivity</p>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-2 uppercase">Output</h4>
+<p class="font-body-md">Quantified BTU/hr Waste Reports</p>
+</div>
+</div>
+</div>
+<div class="absolute right-[-50px] bottom-[-50px] w-1/2 h-1/2 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[300px] leading-none">grid_guides</span>
+</div>
+</div>
+<!-- Side Stat: CUI Inspection -->
+<div class="md:col-span-4 bg-on-background text-white p-10 border border-on-background flex flex-col justify-between bento-card industrial-cut border-l-4 border-l-primary">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">query_stats</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">CUI Detection</h3>
+<p class="font-label-sm opacity-80 mb-6">Corrosion Under Insulation (CUI) is the single greatest threat to piping integrity.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md uppercase">Pulsed Eddy Current</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md uppercase">Radiographic Profiling</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md uppercase">Moisture Profiling</span>
+</div>
+</div>
+</div>
+<!-- Maintenance Planning -->
+<div class="md:col-span-4 bg-surface-container p-10 border border-outline-variant bento-card industrial-cut border-l-4 border-l-primary">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">event_note</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4 uppercase">Predictive Planning</h3>
+<p class="font-body-md text-on-surface-variant">
+                        Moving beyond reactive repairs. We integrate audit data into your multi-year CAPEX and OPEX maintenance cycles.
+                    </p>
+</div>
+<!-- Visual Tech Card -->
+<div class="md:col-span-8 relative group overflow-hidden border border-outline-variant bento-card industrial-cut">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&q=80">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-on-background/40 to-transparent flex flex-col justify-end p-10">
+<h4 class="font-headline-md text-headline-md text-white uppercase">On-Site Diagnostic Precision</h4>
+<p class="text-white/70 font-body-md mt-2">Global mobility for immediate emergency audits and scheduled shutdowns.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specifications Table -->
+<section class="px-margin-desktop py-24 bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="mb-12 flex items-end justify-between">
+<div>
+<h2 class="font-display-lg text-headline-lg text-on-background uppercase">Audit <span class="text-primary">Capabilities</span></h2>
+<p class="font-label-md text-primary uppercase">Standard Operating Protocols</p>
+</div>
+<div class="hidden md:block h-px bg-outline flex-1 mx-12 mb-4"></div>
+</div>
+<div class="bg-white border-2 border-outline-variant overflow-hidden industrial-cut">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-on-background text-white">
+<th class="text-left p-6 font-label-md uppercase border-r border-white/10">Diagnostic Layer</th>
+<th class="text-left p-6 font-label-md uppercase border-r border-white/10">Methodology</th>
+<th class="text-left p-6 font-label-md uppercase border-r border-white/10">Compliance Standard</th>
+<th class="text-left p-6 font-label-md uppercase">Frequency Recommendation</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface transition-colors">
+<td class="p-6 font-bold text-on-background uppercase">Thermal Mapping</td>
+<td class="p-6 text-on-surface-variant">FLIR Infrared Scans</td>
+<td class="p-6 text-on-surface-variant italic">ISO 18434-1</td>
+<td class="p-6"><span class="bg-surface-container-high text-primary px-3 py-1 text-label-sm font-bold uppercase tracking-tighter">Annual</span></td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="p-6 font-bold text-on-background uppercase">Moisture Analysis</td>
+<td class="p-6 text-on-surface-variant">Neutron Backscatter</td>
+<td class="p-6 text-on-surface-variant italic">ASTM C1153</td>
+<td class="p-6"><span class="bg-surface-container-high text-primary px-3 py-1 text-label-sm font-bold uppercase tracking-tighter">Bi-Annual</span></td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="p-6 font-bold text-on-background uppercase">CUI Risk Profiling</td>
+<td class="p-6 text-on-surface-variant">NDT Ultrasonic Testing</td>
+<td class="p-6 text-on-surface-variant italic">API 581 / API 570</td>
+<td class="p-6"><span class="bg-primary text-white px-3 py-1 text-label-sm font-bold uppercase tracking-tighter">Critical Cycle</span></td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="p-6 font-bold text-on-background uppercase">Cladding Integrity</td>
+<td class="p-6 text-on-surface-variant">Visual Borescope</td>
+<td class="p-6 text-on-surface-variant italic">ASME Section V</td>
+<td class="p-6"><span class="bg-surface-container-high text-on-surface-variant px-3 py-1 text-label-sm font-bold uppercase tracking-tighter">Quarterly</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-24 px-margin-desktop text-center bg-white">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-display-lg text-display-lg text-on-background mb-6 uppercase">Ready for a <span class="text-primary">Technical Audit?</span></h2>
+<p class="font-body-lg text-on-surface-variant mb-10 border-l-4 border-primary px-8">
+                    Our engineering team is equipped for global deployment. Protect your assets with data-backed integrity reports.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-primary text-on-primary px-12 py-5 font-headline-md industrial-cut hover:brightness-110 transition-all uppercase tracking-widest">Consult an Engineer</button>
+<button class="border-2 border-on-background text-on-background px-12 py-5 font-headline-md industrial-cut hover:bg-on-background hover:text-white transition-all uppercase tracking-widest">View Case Studies</button>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-low pt-24 pb-8 border-t-4 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="flex items-center gap-2"><img alt="8 Point Logo" class="h-10 w-auto object-contain" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center"><span class="font-headline-md text-on-background uppercase font-bold text-xl">8 POINT</span></div>
+<p class="font-body-md text-on-surface-variant max-w-sm">Leading the marine insulation industry in Singapore since 2004. Quality, Safety, and Engineering excellence in every weld and every layer.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-white">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-white">work</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-primary uppercase font-bold tracking-widest">Navigation</div>
+<div class="grid grid-cols-2 gap-y-3">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+<a class="font-body-md text-primary font-bold" href="services.html">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="projects.html">Projects</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="certifications.html">Certifications</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Facilities</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-primary uppercase font-bold tracking-widest">Newsletter</div>
+<p class="font-body-md text-on-surface-variant">Stay updated with our latest maritime engineering projects and industry news.</p>
+<div class="flex gap-2">
+<input class="bg-white border border-outline p-3 text-on-surface flex-grow focus:ring-2 focus:ring-primary focus:border-primary industrial-cut outline-none" placeholder="Email Address" type="email">
+<button class="bg-primary text-on-primary px-6 py-2 hover:brightness-110 industrial-cut font-label-md uppercase">Join</button>
+</div>
+</div>
+</div>
+<div class="mt-20 border-t border-outline-variant px-margin-desktop max-w-container-max mx-auto py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-on-surface-variant uppercase tracking-widest">© 2024 8 POINT ENGINEERING. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a class="font-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interactions for sidebar links
+    document.querySelectorAll('aside nav a').forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            if (!link.classList.contains('bg-primary')) {
+                link.style.paddingLeft = '1.5rem';
+            }
+        });
+        link.addEventListener('mouseleave', () => {
+            if (!link.classList.contains('bg-primary')) {
+                link.style.paddingLeft = '1rem';
+            }
+        });
+    });
+</script>
+
+
+<script src="nav.js"></script></body></html>

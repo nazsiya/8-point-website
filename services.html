@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c8102e", // Industrial red from SCREEN_32
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c8102e",
+                        "on-primary-container": "#ffffff",
+                        "background": "#ffffff",
+                        "on-background": "#0f172a", // Deep navy for high contrast
+                        "surface": "#f8fafc", // Light slate surface
+                        "on-surface": "#0f172a",
+                        "surface-variant": "#e2e8f0",
+                        "on-surface-variant": "#475569", // Slate grey for secondary text
+                        "outline": "#cbd5e1",
+                        "outline-variant": "#e2e8f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-high": "#e2e8f0",
+                        "surface-container-highest": "#f8fafc",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Barlow Condensed"],
+                        "label-caps": ["Barlow Condensed"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Barlow Condensed"],
+                        "headline-lg": ["Barlow Condensed"],
+                        "headline-xl": ["Barlow Condensed"],
+                        "display-lg": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .industrial-cut {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+        }
+        .dot-grid {
+            background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(200, 16, 46, 0.15);
+            border-color: #c8102e;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] transition-all duration-300" id="site-header">
+<nav class="flex justify-between items-center w-full h-20 px-4 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-10 w-auto" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center">
+<a href="index.html"><span class="text-2xl font-extrabold tracking-tight text-[#0f172a] uppercase" style="font-family:'Barlow Condensed',sans-serif;">8 POINT</span></a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a data-page="index.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="index.html">Home</a>
+<a data-page="about.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="about.html">About</a>
+<a data-page="services.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="services.html">Services</a>
+<a data-page="projects.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="projects.html">Projects</a>
+<a data-page="certifications.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="certifications.html">Certifications</a>
+<a data-page="contact.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-3">
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#0f172a]" aria-label="Open menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+<a href="request-quote.html" class="bg-[#c8102e] text-white text-sm font-bold px-6 py-2.5 uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);font-family:'Barlow Condensed',sans-serif;">REQUEST QUOTE</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#e2e8f0] px-4 py-4 space-y-3 shadow-lg">
+<a href="index.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Home</a>
+<a href="about.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">About</a>
+<a href="services.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Services</a>
+<a href="projects.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Projects</a>
+<a href="certifications.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Certifications</a>
+<a href="contact.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Contact Us</a>
+<a href="request-quote.html" class="block text-sm font-bold text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Request Quote</a>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section (Updated with SCREEN_32 Style) -->
+<section class="relative min-h-[450px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Industrial manufacturing facility" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 dot-grid opacity-20"></div>
+</div>
+<div class="relative z-20 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="mb-4 inline-flex items-center gap-3 px-4 py-1.5 bg-white shadow-sm border-l-4 border-primary">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">ISO 9001 &amp; ISO 45001 CERTIFIED</span>
+</div>
+<h1 class="font-display-lg text-display-lg uppercase mb-6 leading-none text-on-background">Our <span class="text-primary">Services</span></h1>
+<p class="font-body-lg text-body-lg max-w-2xl text-on-surface-variant border-l-2 border-primary pl-6">
+                    Engineering Precision. Delivering Reliability. We provide specialized industrial solutions designed to endure the most demanding environments across the globe.
+                </p>
+</div>
+</section>
+<!-- Services Grid Section -->
+<section class="py-24 px-margin-desktop bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="service-card bg-white border border-outline-variant flex flex-col group overflow-hidden industrial-cut glow-hover">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Hot &amp; Cold Insulation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase leading-tight group-hover:text-primary transition-colors">Hot &amp; Cold Insulation</h3>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-surface-container-high text-primary tracking-widest">THERMAL</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">
+                                Advanced thermal management solutions for extreme temperature gradients, optimizing energy efficiency and personnel safety in petrochemical and power plants.
+                            </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 group/link uppercase tracking-wider" href="service-hot-cold-insulation.html">
+                                View Specifications <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="service-card bg-white border border-outline-variant flex flex-col group overflow-hidden industrial-cut glow-hover">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Cryogenic Systems" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase leading-tight group-hover:text-primary transition-colors">Cryogenic Systems</h3>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-surface-container-high text-primary tracking-widest">CRYO</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">
+                                Specialized insulation for liquefied gas handling, featuring multi-layer vapor barriers and rigid PIR/PUR systems designed for temperatures below -150°C.
+                            </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 group/link uppercase tracking-wider" href="service-cryogenic.html">
+                                View Specifications <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="service-card bg-white border border-outline-variant flex flex-col group overflow-hidden industrial-cut glow-hover">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Pipeline Jackets" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80">
+</div>
+<div class="p-8 flex flex-col flex-grow border-t-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase leading-tight group-hover:text-primary transition-colors">Pipeline Jackets</h3>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-surface-container-high text-primary tracking-widest">METALLIC</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">
+                                Precision-engineered metal cladding in aluminum, stainless steel, or Aluzinc to protect thermal insulation from mechanical damage and weather ingress.
+                            </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 group/link uppercase tracking-wider" href="service-pipeline-jackets.html">
+                                View Specifications <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service Card 4 -->
+<div class="service-card bg-white border border-outline-variant flex flex-col group overflow-hidden industrial-cut glow-hover">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Sheet Metal Fabrication" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1565515636069-9db58fc4f6d7?w=800&q=80">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase leading-tight group-hover:text-primary transition-colors">Sheet Metal Fabrication</h3>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-surface-container-high text-primary tracking-widest">METALLIC</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">
+                                Custom fabrication of industrial components, vessel heads, and transitions utilizing high-precision CNC machinery and expert craftsmanship.
+                            </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 group/link uppercase tracking-wider" href="service-sheet-metal.html">
+                                View Specifications <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service Card 5 -->
+<div class="service-card bg-white border border-outline-variant flex flex-col group overflow-hidden industrial-cut glow-hover">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Acoustic Control" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase leading-tight group-hover:text-primary transition-colors">Acoustic Control</h3>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-surface-container-high text-primary tracking-widest">ACOUSTIC</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">
+                                Designing and implementing noise reduction systems for turbine enclosures, compressor stations, and high-velocity gas lines to ensure regulatory compliance.
+                            </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 group/link uppercase tracking-wider" href="service-acoustic-control.html">
+                                View Specifications <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service Card 6 -->
+<div class="service-card bg-white border border-outline-variant flex flex-col group overflow-hidden industrial-cut glow-hover">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Fire Protection" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80">
+</div>
+<div class="p-8 flex flex-col flex-grow border-t-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase leading-tight group-hover:text-primary transition-colors">Fire Protection</h3>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-surface-container-high text-primary tracking-widest">PROTECTION</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">
+                                Passive fire protection solutions including intumescent coatings and rigid enclosures designed to maintain structural integrity during critical fire events.
+                            </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 group/link uppercase tracking-wider" href="service-fire-protection.html">
+                                View Specifications <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service Card 7 -->
+<div class="service-card bg-white border border-outline-variant flex flex-col group overflow-hidden industrial-cut glow-hover">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Marine Refurbishment" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase leading-tight group-hover:text-primary transition-colors">Marine Refurbishment</h3>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-surface-container-high text-primary tracking-widest">MARINE</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">
+                                Complete offshore and vessel insulation services, from engine room cladding to crew quarters refurbishment, optimized for the harsh marine environment.
+                            </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 group/link uppercase tracking-wider" href="service-marine-refurbishment.html">
+                                View Specifications <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service Card 8 -->
+<div class="service-card bg-white border border-outline-variant flex flex-col group overflow-hidden industrial-cut glow-hover">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="On-Site Supervision" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase leading-tight group-hover:text-primary transition-colors">On-Site Supervision</h3>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-surface-container-high text-primary tracking-widest">CONSULTING</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">
+                                Deployment of senior QA/QC engineers to oversee installation projects, ensuring strict adherence to design specifications and safety protocols.
+                            </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 group/link uppercase tracking-wider" href="service-on-site-supervision.html">
+                                View Specifications <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service Card 9 -->
+<div class="service-card bg-white border border-outline-variant flex flex-col group overflow-hidden industrial-cut glow-hover">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Technical Audits" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80">
+</div>
+<div class="p-8 flex flex-col flex-grow border-t-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-on-background uppercase leading-tight group-hover:text-primary transition-colors">Technical Audits</h3>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-surface-container-high text-primary tracking-widest">CONSULTING</span>
+</div>
+<p class="text-on-surface-variant font-body-md mb-8 flex-grow">
+                                Comprehensive evaluation of existing insulation assets to identify energy loss, CUI (Corrosion Under Insulation) risks, and maintenance requirements.
+                            </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 group/link uppercase tracking-wider" href="service-technical-audits.html">
+                                View Specifications <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA & Contact Form Section (Restyled to match SCREEN_32) -->
+<section class="bg-background py-24 border-t border-outline-variant">
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div class="space-y-10">
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-background leading-tight">Ready to Discuss Your <span class="text-primary">Project?</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant border-l-2 border-primary pl-6">
+                        Whether you are in the planning stage or require immediate on-site technical support, our team of engineering experts is prepared to assist with your specific requirements.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm industrial-cut">
+<span class="material-symbols-outlined text-primary mb-4 block" data-icon="location_on">location_on</span>
+<h4 class="font-headline-sm text-headline-sm mb-2 text-on-background uppercase">HQ Address</h4>
+<p class="font-body-md text-on-surface-variant">No. 8 Penjuru Place, #01-14,<br>2-8 Penjuru Tech Hub, Singapore 608780</p>
+</div>
+<div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm industrial-cut">
+<span class="material-symbols-outlined text-primary mb-4 block" data-icon="call">call</span>
+<h4 class="font-headline-sm text-headline-sm mb-2 text-on-background uppercase">Direct Line</h4>
+<p class="font-body-md text-on-surface-variant">+65 6265 8888<br>+65 6265 9999 (24/7)</p>
+</div>
+</div>
+</div>
+<!-- Contact Form -->
+<div class="bg-white p-10 industrial-cut shadow-xl border border-outline-variant relative">
+<div class="absolute top-4 right-4">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest">SYSTEM ONLINE</span>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest font-bold">Full Name</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="John Doe" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest font-bold">Email Address</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="john@company.com" type="email">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest font-bold">Inquiry Type</label>
+<select class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all">
+<option>Technical Specification Request</option>
+<option>Project Quotation</option>
+<option>On-site Supervision Request</option>
+<option>Other Inquiry</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest font-bold">Message Details</label>
+<textarea class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="Briefly describe your project requirements..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-5 industrial-cut hover:brightness-110 transition-all uppercase tracking-widest" type="submit">
+                            Submit Inquiry
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Updated to match SCREEN_32 Style) -->
+<footer class="bg-white border-t border-outline-variant pt-20 pb-10">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-8 w-auto" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center">
+<span class="text-2xl font-headline-xl font-bold tracking-tight text-black uppercase">8 POINT</span>
+</div>
+<p class="text-body-md text-on-surface-variant max-w-xs border-l-2 border-primary pl-6 leading-relaxed">
+                Pioneering industrial solutions with a focus on safety, efficiency, and engineering precision since 1999.
+            </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center border border-outline hover:bg-surface-container transition-all" href="#"><span class="material-symbols-outlined text-deep-navy">share</span></a>
+<a class="w-10 h-10 flex items-center justify-center border border-outline hover:bg-surface-container transition-all" href="#"><span class="material-symbols-outlined text-deep-navy">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-md text-deep-navy font-bold tracking-widest uppercase mb-6">QUICK LINKS</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="projects.html">Projects</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-md text-deep-navy font-bold tracking-widest uppercase mb-6">RESOURCES</h4>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="certifications.html">Certifications</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Facilities</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Safety Protocols</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Career Opportunities</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-md text-deep-navy font-bold tracking-widest uppercase mb-6">HQ ADDRESS</h4>
+            <p class="font-body-md text-on-surface-variant leading-loose">No. 8 Penjuru Place, #01-14,<br>2-8 Penjuru Tech Hub, Singapore 608780</p>
+<div class="pt-4">
+<span class="font-label-sm text-label-sm bg-surface-container-high px-3 py-1 text-deep-navy uppercase font-bold tracking-widest">Global HQ</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-[0.2em]">© 2024 8 POINT ENGINEERING. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-10">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll micro-interaction for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md');
+            } else {
+                nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+<script src="nav.js"></script></body></html>

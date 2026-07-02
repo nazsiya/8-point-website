@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Fire Protection Services | 8 POINT ENGINEERING</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c8102e", // Industrial red accent
+                        "on-primary": "#ffffff",
+                        "background": "#ffffff", // Clean white background
+                        "on-background": "#0f172a",
+                        "surface": "#f8fafc", // Light slate surface
+                        "on-surface": "#0f172a",
+                        "surface-variant": "#e2e8f0",
+                        "on-surface-variant": "#475569",
+                        "outline": "#cbd5e1",
+                        "outline-variant": "#e2e8f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-high": "#e2e8f0",
+                        "surface-container-highest": "#f8fafc",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Barlow Condensed"],
+                        "headline-md": ["Barlow Condensed"],
+                        "headline-xl": ["Barlow Condensed"],
+                        "headline-lg-mobile": ["Barlow Condensed"],
+                        "headline-lg": ["Barlow Condensed"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Barlow Condensed"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .industrial-cut {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+        }
+        .dot-grid {
+            background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] transition-all duration-300" id="site-header">
+<nav class="flex justify-between items-center w-full h-20 px-4 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="8 Point Industrial Logo" class="h-10 w-auto" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center">
+<a href="index.html"><span class="text-2xl font-extrabold tracking-tight text-[#0f172a] uppercase" style="font-family:'Barlow Condensed',sans-serif;">8 POINT</span></a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a data-page="index.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="index.html">Home</a>
+<a data-page="about.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="about.html">About</a>
+<a data-page="services.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="services.html">Services</a>
+<a data-page="projects.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="projects.html">Projects</a>
+<a data-page="certifications.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="certifications.html">Certifications</a>
+<a data-page="contact.html" class="text-sm font-semibold text-[#475569] hover:text-[#c8102e] transition-colors py-1 uppercase tracking-widest border-b-2 border-transparent hover:border-[#c8102e]" style="font-family:'Barlow Condensed',sans-serif;" href="contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-3">
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#0f172a]" aria-label="Open menu">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+<a href="request-quote.html" class="bg-[#c8102e] text-white text-sm font-bold px-6 py-2.5 uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);font-family:'Barlow Condensed',sans-serif;">REQUEST QUOTE</a>
+</div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#e2e8f0] px-4 py-4 space-y-3 shadow-lg">
+<a href="index.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Home</a>
+<a href="about.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">About</a>
+<a href="services.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Services</a>
+<a href="projects.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Projects</a>
+<a href="certifications.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Certifications</a>
+<a href="contact.html" class="block text-sm font-bold text-[#475569] hover:text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Contact Us</a>
+<a href="request-quote.html" class="block text-sm font-bold text-[#c8102e] uppercase tracking-widest py-1" style="font-family:'Barlow Condensed',sans-serif;">Request Quote</a>
+</div>
+</header>
+<main class="lg:pl-72 min-h-screen pt-20">
+<!-- Side Navigation (Desktop Only) -->
+<aside class="hidden lg:flex flex-col h-full w-72 left-0 fixed bg-surface-container border-r border-outline-variant z-40 top-20">
+<div class="p-8 border-b border-outline-variant bg-surface-container-high/30">
+<div class="font-headline-md text-headline-md text-on-background uppercase">Industrial Services</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Precision Engineering Suite</div>
+</div>
+<nav class="flex-1 py-4 overflow-y-auto">
+<a class="flex items-center gap-4 px-8 py-4 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="thermostat">thermostat</span> Hot &amp; Cold Insulation
+            </a>
+<a class="flex items-center gap-4 px-8 py-4 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="ac_unit">ac_unit</span> Cryogenic Systems
+            </a>
+<a class="flex items-center gap-4 px-8 py-4 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span> Pipeline Jackets
+            </a>
+<a class="flex items-center gap-4 px-8 py-4 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="service-sheet-metal.html">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span> Sheet Metal Fabrication
+            </a>
+<a class="flex items-center gap-4 px-8 py-4 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="service-acoustic-control.html">
+<span class="material-symbols-outlined" data-icon="volume_off">volume_off</span> Acoustic Control
+            </a>
+<a class="flex items-center gap-4 px-8 py-4 font-label-md text-label-md bg-primary text-on-primary font-bold industrial-cut" href="service-fire-protection.html">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span> Fire Protection
+            </a>
+<a class="flex items-center gap-4 px-8 py-4 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="service-marine-refurbishment.html">
+<span class="material-symbols-outlined" data-icon="directions_boat">directions_boat</span> Marine Refurbishment
+            </a>
+<a class="flex items-center gap-4 px-8 py-4 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="service-on-site-supervision.html">
+<span class="material-symbols-outlined" data-icon="engineering">engineering</span> On-site Supervision
+            </a>
+<a class="flex items-center gap-4 px-8 py-4 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="service-technical-audits.html">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span> Technical Audits
+            </a>
+</nav>
+<div class="p-8">
+<button class="w-full py-4 bg-white text-on-background border border-outline font-label-caps text-label-caps hover:bg-primary hover:text-on-primary hover:border-primary transition-all industrial-cut">DOWNLOAD CATALOG</button>
+</div>
+</aside>
+<!-- Hero Section -->
+<section class="relative h-[550px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Fire Protection Systems" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent"></div>
+<div class="absolute inset-0 dot-grid opacity-10"></div>
+</div>
+<div class="relative px-margin-mobile md:px-margin-desktop max-w-4xl z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1 bg-white shadow-sm border-l-4 border-primary mb-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">OFFSHORE &amp; INDUSTRIAL PFP</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-6 leading-none uppercase">STRUCTURAL INTEGRITY <br><span class="text-primary">IN THE LINE OF FIRE</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10 border-l-2 border-primary pl-6">Precision-engineered intumescent coatings and structural steel insulation designed for the harsh environments of offshore platforms and heavy industry.</p>
+<div class="flex flex-wrap gap-4">
+<button class="h-12 px-8 bg-primary text-on-primary font-label-md industrial-cut shadow-md hover:brightness-110 transition-all uppercase tracking-widest">EXPLORE SYSTEMS</button>
+<button class="h-12 px-8 border border-outline text-on-surface font-label-md industrial-cut hover:bg-surface-container-high transition-all uppercase tracking-widest">VIEW CASE STUDIES</button>
+</div>
+</div>
+</section>
+<!-- Technical Capabilities -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low/30">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4 uppercase">ENGINEERING THE <span class="text-primary">SHIELD</span></h2>
+<div class="w-24 h-1 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Intumescent Coating -->
+<div class="md:col-span-8 bg-white border border-outline-variant p-10 flex flex-col justify-between group industrial-cut">
+<div>
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="layers">layers</span>
+<h3 class="font-headline-md text-headline-md uppercase">Advanced Intumescent Coating</h3>
+</div>
+<p class="text-on-surface-variant font-body-md mb-8 max-w-xl">Our passive fire protection (PFP) coatings swell under extreme heat to form an insulating char, preventing structural collapse during hydrocarbon fires. Essential for offshore structural steel integrity.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                            HYDROCARBON FIRE RESISTANCE (HFR)
+                        </li>
+<li class="flex items-center gap-2 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                            CORROSION PROTECTION UNDER INSULATION (CUI)
+                        </li>
+<li class="flex items-center gap-2 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                            OFFSHORE-READY DURABILITY
+                        </li>
+</ul>
+</div>
+<div class="flex justify-end">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Certification Card -->
+<div class="md:col-span-4 bg-surface-container text-on-surface border border-outline-variant p-10 flex flex-col justify-between industrial-cut">
+<div>
+<h3 class="font-headline-md text-headline-md mb-6 uppercase">Safety Standards</h3>
+<div class="space-y-6">
+<div class="border-b border-outline pb-4">
+<div class="text-primary font-label-caps text-label-caps">UL 1709</div>
+<div class="text-label-sm font-label-sm opacity-80">Rapid Rise Fire Tests</div>
+</div>
+<div class="border-b border-outline pb-4">
+<div class="text-primary font-label-caps text-label-caps">ISO 22899-1</div>
+<div class="text-label-sm font-label-sm opacity-80">Jet Fire Resistance</div>
+</div>
+<div class="border-b border-outline pb-4">
+<div class="text-primary font-label-caps text-label-caps">ASTM E119</div>
+<div class="text-label-sm font-label-sm opacity-80">Structural Certification</div>
+</div>
+</div>
+</div>
+<button class="mt-8 py-3 border border-primary text-primary font-label-md industrial-cut hover:bg-primary hover:text-on-primary transition-all uppercase tracking-widest">CERTIFICATION ARCHIVE</button>
+</div>
+<!-- Barriers -->
+<div class="md:col-span-4 bg-white border-l-4 border-primary p-10 shadow-sm industrial-cut">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="emergency_heat">emergency_heat</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">Thermal Barriers</h3>
+<p class="text-on-surface-variant font-body-md">Life-saving systems that maintain safe temperatures in refuge areas and critical control rooms during catastrophic events.</p>
+</div>
+<!-- Structural -->
+<div class="md:col-span-4 bg-white border-l-4 border-outline p-10 shadow-sm industrial-cut">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl mb-6" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">Structural Steel</h3>
+<p class="text-on-surface-variant font-body-md">Precision insulation blankets and rigid boards tailored for complex steel geometries, ensuring 360-degree protection.</p>
+</div>
+<!-- Protocol -->
+<div class="md:col-span-4 bg-white border-l-4 border-outline p-10 shadow-sm industrial-cut">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl mb-6" data-icon="verified">verified</span>
+<h3 class="font-headline-md text-headline-md mb-4 uppercase">QA/QC Protocol</h3>
+<p class="text-on-surface-variant font-body-md">Comprehensive DFT (Dry Film Thickness) testing and adhesion verification following every application stage.</p>
+</div>
+</div>
+</section>
+<!-- Comparison Table -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-white">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4 uppercase">PFP <span class="text-primary">SPECIFICATION MATRIX</span></h2>
+<p class="text-on-surface-variant font-body-md">Selecting the right protection for high-risk assets.</p>
+</div>
+<div class="bg-white border border-outline overflow-hidden industrial-cut shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface">
+<th class="p-6 font-label-md uppercase tracking-wider">System Category</th>
+<th class="p-6 font-label-md uppercase tracking-wider">Fire Type</th>
+<th class="p-6 font-label-md uppercase tracking-wider">Duration</th>
+<th class="p-6 font-label-md uppercase tracking-wider">Key Benefit</th>
+</tr>
+</thead>
+<tbody class="text-label-sm font-label-sm">
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="p-6 font-bold text-on-background">Epoxy Intumescent</td>
+<td class="p-6">Hydrocarbon / Jet Fire</td>
+<td class="p-6">Up to 4 Hours</td>
+<td class="p-6 text-primary font-bold">Extreme Durability</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="p-6 font-bold text-on-background">Cementitious Sprays</td>
+<td class="p-6">Cellulosic Fire</td>
+<td class="p-6">1 - 3 Hours</td>
+<td class="p-6">Cost Effective</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+<td class="p-6 font-bold text-on-background">Flexi-Blankets</td>
+<td class="p-6">High Temp Radiant</td>
+<td class="p-6">Customizable</td>
+<td class="p-6 text-primary font-bold">Removable / Reusable</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-6 font-bold text-on-background">Rigid Boards</td>
+<td class="p-6">Structural Support</td>
+<td class="p-6">2+ Hours</td>
+<td class="p-6">Mechanical Strength</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low border-t border-outline-variant">
+<div class="bg-white border border-outline p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 industrial-cut shadow-xl">
+<div class="relative z-10 max-w-xl">
+<div class="text-primary font-label-md mb-4 uppercase tracking-widest font-bold">SYSTEM ONLINE</div>
+<h2 class="font-headline-xl text-headline-xl text-on-background mb-6 leading-tight uppercase">READY TO SECURE <br><span class="text-primary">YOUR ASSETS?</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant border-l-2 border-primary pl-6">Consult with our PFP specialists to design a fire protection strategy that meets global safety standards and operational requirements.</p>
+</div>
+<div class="relative z-10 shrink-0">
+<button class="bg-primary text-on-primary px-10 py-5 font-label-md industrial-cut shadow-lg hover:brightness-110 active:scale-95 transition-all uppercase tracking-widest">CONSULT AN ENGINEER</button>
+</div>
+<div class="absolute right-0 top-0 w-1/2 h-full dot-grid opacity-10 pointer-events-none"></div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low pt-24 pb-8 border-t-2 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-headline-md text-headline-md text-on-background uppercase"><div class="flex items-center gap-4"><img alt="8 Point Industrial Logo" class="h-12 w-auto" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&q=80&fit=crop&crop=center"><span class="text-headline-md font-headline-md font-bold text-on-background">8 POINT</span></div></div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Leading the marine insulation industry since 2004. Quality, Safety, and Engineering excellence in every weld and every layer.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-white border border-outline hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface group-hover:text-on-primary" data-icon="work">work</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Navigation</div>
+<div class="grid grid-cols-2 gap-y-3">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+<a class="font-body-md text-primary font-semibold" href="services.html">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="projects.html">Projects</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="certifications.html">Certifications</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Technical Data</a>
+</div>
+</div>
+<div class="space-y-6">
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-widest">Newsletter</div>
+<p class="font-body-md text-on-surface-variant">Stay updated with our latest maritime engineering projects and industry news.</p>
+<div class="flex gap-2">
+<input class="bg-white border border-outline p-3 text-on-surface flex-grow focus:ring-1 focus:ring-primary industrial-cut" placeholder="Email Address" type="email">
+<button class="bg-primary text-on-primary px-6 py-2 hover:brightness-110 industrial-cut font-label-md uppercase tracking-widest">JOIN</button>
+</div>
+</div>
+</div>
+<div class="mt-20 border-t border-outline px-margin-desktop max-w-container-max mx-auto py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">© 2024 8 POINT ENGINEERING. INDUSTRIAL EXCELLENCE THROUGH PRECISION.</p>
+<div class="flex gap-8">
+<a class="font-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</main>
+<script>
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('shadow-md');
+        } else {
+            nav.classList.remove('shadow-md');
+        }
+    });
+</script>
+
+
+<script src="nav.js"></script></body></html>
