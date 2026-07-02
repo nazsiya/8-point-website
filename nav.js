@@ -69,26 +69,5 @@
     });
   });
 
-  // Contact form submission animation
-  var forms = document.querySelectorAll('form');
-  forms.forEach(function(form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var btn = form.querySelector('button[type="submit"]');
-      if (!btn) return;
-      var original = btn.innerHTML;
-      btn.innerHTML = 'Sending...';
-      btn.disabled = true;
-      setTimeout(function() {
-        btn.innerHTML = '&#10003; Sent Successfully!';
-        btn.style.background = '#16a34a';
-        setTimeout(function() {
-          btn.innerHTML = original;
-          btn.style.background = '';
-          btn.disabled = false;
-          form.reset();
-        }, 3000);
-      }, 1500);
-    });
-  });
+
 })();
