@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Contact Us | 8 Point Engineering</title>
@@ -218,25 +218,25 @@
 <div class="bg-surface-container-lowest border border-outline-variant p-10 industrial-cut shadow-lg hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-shadow reveal-on-scroll stagger-2">
 <h3 class="font-headline-md text-headline-md mb-2 uppercase text-deep-navy">Project Inquiry</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mb-8">Submit your technical requirements and our engineering team will respond within 24 hours.</p>
-<form class="space-y-6">
+<form class="space-y-6" id="contactForm">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="block font-label-caps text-label-sm uppercase text-deep-navy font-bold tracking-widest">Full Name</label>
-<input class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="John Doe" type="text">
+<input class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="John Doe" type="text" name="name">
 </div>
 <div class="space-y-2">
 <label class="block font-label-caps text-label-sm uppercase text-deep-navy font-bold tracking-widest">Email Address</label>
-<input class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="john@company.com" type="email">
+<input class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="john@company.com" type="email" name="email">
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="block font-label-caps text-label-sm uppercase text-deep-navy font-bold tracking-widest">Company Name</label>
-<input class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="Engineering Ltd." type="text">
+<input class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all" placeholder="Engineering Ltd." type="text" name="company">
 </div>
 <div class="space-y-2">
 <label class="block font-label-caps text-label-sm uppercase text-deep-navy font-bold tracking-widest">Inquiry Type</label>
-<select class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all appearance-none">
+<select class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all appearance-none" name="inquiryType">
 <option>Electrical Instrumentation &amp; Services</option>
 <option>Piping Services</option>
 <option>Industrial Solutions</option>
@@ -247,7 +247,7 @@
 </div>
 <div class="space-y-2">
 <label class="block font-label-caps text-label-sm uppercase text-deep-navy font-bold tracking-widest">Message / Technical Requirements</label>
-<textarea class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all resize-none" placeholder="Describe your project scope..." rows="5"></textarea>
+<textarea class="w-full bg-surface-container-low border-outline-variant focus:ring-2 focus:ring-primary text-on-surface p-4 border focus:border-primary transition-all resize-none" placeholder="Describe your project scope..." rows="5" name="message"></textarea>
 </div>
 <div class="flex items-start gap-3">
 <input class="mt-1 text-primary focus:ring-primary rounded-sm border-outline-variant" type="checkbox">
@@ -257,6 +257,7 @@
                             Send Inquiry
                             <span class="material-symbols-outlined" data-icon="send">send</span>
 </button>
+<p id="contactFormStatus" class="text-label-sm font-label-sm mt-4" role="status"></p>
 </form>
 </div>
 <!-- Certifications Strip -->
@@ -345,24 +346,59 @@
             }
         });
 
-        // Form submission animation placeholder
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="sync">sync</span> Processing...';
-            btn.disabled = true;
-            
-            setTimeout(() => {
-                btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> Sent Successfully';
-                btn.classList.replace('bg-primary', 'bg-green-600');
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.classList.replace('bg-green-600', 'bg-primary');
-                    btn.disabled = false;
-                    e.target.reset();
-                }, 3000);
-            }, 1500);
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+          e.preventDefault();
+          const form = e.target;
+          const statusEl = document.getElementById('contactFormStatus');
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.innerHTML;
+
+          statusEl.textContent = '';
+          statusEl.className = 'text-label-sm font-label-sm mt-4';
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Sending...';
+
+          try {
+            const token = await new Promise((resolve, reject) => {
+              grecaptcha.ready(function () {
+                grecaptcha.execute('6LeH1yYtAAAAAIStBJ7QE0rXiMXY9A4iQVV4RdJn', { action: 'contact' })
+                  .then(resolve).catch(reject);
+              });
+            });
+
+            const payload = {
+              name: form.name.value,
+              email: form.email.value,
+              company: form.company.value,
+              inquiryType: form.inquiryType.value,
+              message: form.message.value,
+              recaptchaToken: token,
+            };
+
+            const res = await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+              statusEl.textContent = 'Message sent — we\'ll get back to you shortly.';
+              statusEl.classList.add('text-green-600');
+              form.reset();
+            } else {
+              statusEl.textContent = data.error || 'Something went wrong. Please try again.';
+              statusEl.classList.add('text-industrial-red');
+            }
+          } catch (err) {
+            console.error(err);
+            statusEl.textContent = 'Something went wrong. Please try again.';
+            statusEl.classList.add('text-industrial-red');
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          }
         });
     </script>
 <script src="nav.js"></script></body></html>

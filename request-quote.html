@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Request Quote | 8 Point Engineering</title>
@@ -188,11 +188,11 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Project Name</label>
-<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="e.g. Terminal 4 Piping Upgrade" type="text">
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="e.g. Terminal 4 Piping Upgrade" type="text" name="projectName">
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Service Category</label>
-<select class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all">
+<select class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" name="serviceCategory">
 <option>Industrial Insulation</option>
 <option>Mechanical Piping</option>
 <option>Structural Fabrication</option>
@@ -211,26 +211,27 @@
 <div class="space-y-6">
 <div class="space-y-2">
 <label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Scope of Work</label>
-<textarea class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="Detail the technical requirements, material constraints, and environmental factors..." rows="4"></textarea>
+<textarea class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="Detail the technical requirements, material constraints, and environmental factors..." rows="4" name="scopeOfWork"></textarea>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <div class="space-y-2">
 <label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Material Type</label>
-<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="Stainless, Carbon, etc." type="text">
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="Stainless, Carbon, etc." type="text" name="materialType">
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Estimated Weight (kg)</label>
-<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="0.00" type="number">
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="0.00" type="number" name="estimatedWeight">
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Desired Deadline</label>
-<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" type="date">
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" type="date" name="desiredDeadline">
 </div>
 </div>
 <div class="border-2 border-dashed border-outline-silver p-8 text-center bg-surface hover:bg-surface-container-low transition-colors cursor-pointer industrial-cut group">
 <span class="material-symbols-outlined text-4xl text-outline mb-2 group-hover:text-industrial-red">upload_file</span>
 <p class="font-label-md uppercase text-slate-gray">Upload CAD Drawings or Blueprints (PDF, DWG)</p>
 </div>
+<p class="text-xs text-slate-gray mt-2">File upload isn't available yet — please email drawings directly to info@8point.com.sg after submitting.</p>
 </div>
 </section>
 <!-- Step 3: Contact Information -->
@@ -242,19 +243,19 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Full Name</label>
-<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="John Doe" type="text">
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="John Doe" type="text" name="name">
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Company Name</label>
-<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="Engineering Solutions Ltd" type="text">
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="Engineering Solutions Ltd" type="text" name="company">
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Work Email</label>
-<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="j.doe@company.com" type="email">
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="j.doe@company.com" type="email" name="email">
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-label-sm text-deep-navy uppercase tracking-widest font-bold">Phone Number</label>
-<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="+65 6265 8888" type="tel">
+<input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" placeholder="+65 6265 8888" type="tel" name="phone">
 </div>
 </div>
 </section>
@@ -264,6 +265,7 @@
                             Submit Technical Quote Request
                         </button>
 </div>
+<p id="quoteFormStatus" class="text-label-sm font-label-sm mt-4" role="status"></p>
 </form>
 </div>
 <!-- Right Column: Sidebar -->
@@ -385,22 +387,64 @@
 </footer>
 <script>
         // Simple form interaction logic
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const submitBtn = e.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerText;
-            
-            submitBtn.innerText = 'PROCESSING REQUEST...';
-            submitBtn.disabled = true;
-            submitBtn.style.opacity = '0.7';
+        document.getElementById('quoteForm').addEventListener('submit', async function (e) {
+          e.preventDefault();
+          const form = e.target;
+          const statusEl = document.getElementById('quoteFormStatus');
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.innerHTML;
 
-            setTimeout(() => {
-                alert('Thank you! Your quote request has been submitted. A specialist will contact you shortly.');
-                submitBtn.innerText = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.opacity = '1';
-                e.target.reset();
-            }, 1500);
+          statusEl.textContent = '';
+          statusEl.className = 'text-label-sm font-label-sm mt-4';
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Submitting...';
+
+          try {
+            const token = await new Promise((resolve, reject) => {
+              grecaptcha.ready(function () {
+                grecaptcha.execute('6LeH1yYtAAAAAIStBJ7QE0rXiMXY9A4iQVV4RdJn', { action: 'quote' })
+                  .then(resolve).catch(reject);
+              });
+            });
+
+            const payload = {
+              projectName: form.projectName.value,
+              serviceCategory: form.serviceCategory.value,
+              scopeOfWork: form.scopeOfWork.value,
+              materialType: form.materialType.value,
+              estimatedWeight: form.estimatedWeight.value,
+              desiredDeadline: form.desiredDeadline.value,
+              name: form.name.value,
+              company: form.company.value,
+              email: form.email.value,
+              phone: form.phone.value,
+              recaptchaToken: token,
+            };
+
+            const res = await fetch('/api/quote', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+              statusEl.textContent = 'Quote request submitted — a specialist will contact you shortly.';
+              statusEl.classList.add('text-green-600');
+              form.reset();
+            } else {
+              statusEl.textContent = data.error || 'Something went wrong. Please try again.';
+              statusEl.classList.add('text-industrial-red');
+            }
+          } catch (err) {
+            console.error(err);
+            statusEl.textContent = 'Something went wrong. Please try again.';
+            statusEl.classList.add('text-industrial-red');
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          }
         });
 
         // Hover effect for inputs
