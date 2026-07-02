@@ -227,11 +227,12 @@
 <input class="w-full bg-surface-container-lowest border-outline-variant focus:ring-2 focus:ring-industrial-red text-on-surface p-4 border focus:border-industrial-red transition-all" type="date" name="desiredDeadline">
 </div>
 </div>
-<div class="border-2 border-dashed border-outline-silver p-8 text-center bg-surface hover:bg-surface-container-low transition-colors cursor-pointer industrial-cut group">
-<span class="material-symbols-outlined text-4xl text-outline mb-2 group-hover:text-industrial-red">upload_file</span>
-<p class="font-label-md uppercase text-slate-gray">Upload CAD Drawings or Blueprints (PDF, DWG)</p>
+<div class="border-2 border-dashed border-outline-silver p-8 text-center bg-surface hover:bg-surface-container-low transition-colors cursor-pointer industrial-cut group relative">
+  <input type="file" name="attachment" id="attachment" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept=".dwg,.dxf,.step,.stp,.iges,.igs,.pdf,.jpg,.jpeg,.png,.webp" />
+  <span class="material-symbols-outlined text-4xl text-outline mb-2 group-hover:text-industrial-red">upload_file</span>
+  <p class="font-label-md uppercase text-slate-gray" id="fileNameDisplay">Attach drawing or reference file (CAD, PDF, or image — optional, max 4MB)</p>
 </div>
-<p class="text-xs text-slate-gray mt-2">File upload isn't available yet — please email drawings directly to info@8point.com.sg after submitting.</p>
+<p id="fileError" class="text-xs text-industrial-red mt-2 hidden"></p>
 </div>
 </section>
 <!-- Step 3: Contact Information -->
@@ -386,7 +387,54 @@
 </div>
 </footer>
 <script>
-        // Simple form interaction logic
+        // File input validation & UI updates
+        const fileInput = document.getElementById('attachment');
+        const fileError = document.getElementById('fileError');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+        const defaultLabel = "Attach drawing or reference file (CAD, PDF, or image — optional, max 4MB)";
+
+        if (fileInput) {
+          fileInput.addEventListener('change', function () {
+            if (fileError) {
+              fileError.textContent = '';
+              fileError.classList.add('hidden');
+            }
+            if (fileNameDisplay) {
+              fileNameDisplay.textContent = defaultLabel;
+              fileNameDisplay.classList.remove('text-primary');
+            }
+
+            if (fileInput.files.length > 0) {
+              const file = fileInput.files[0];
+              const allowedExtensions = ['dwg', 'dxf', 'step', 'stp', 'iges', 'igs', 'pdf', 'jpg', 'jpeg', 'png', 'webp'];
+              const ext = file.name.split('.').pop().toLowerCase();
+
+              if (!allowedExtensions.includes(ext)) {
+                if (fileError) {
+                  fileError.textContent = `Invalid file type: .${ext}. Only CAD, PDF, or image files are allowed.`;
+                  fileError.classList.remove('hidden');
+                }
+                fileInput.value = ''; // clear input
+                return;
+              }
+
+              if (file.size > 4 * 1024 * 1024) {
+                if (fileError) {
+                  fileError.textContent = 'File size exceeds the 4MB limit.';
+                  fileError.classList.remove('hidden');
+                }
+                fileInput.value = ''; // clear input
+                return;
+              }
+
+              if (fileNameDisplay) {
+                fileNameDisplay.textContent = `Selected: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+                fileNameDisplay.classList.add('text-primary');
+              }
+            }
+          });
+        }
+
         document.getElementById('quoteForm').addEventListener('submit', async function (e) {
           e.preventDefault();
           const form = e.target;
@@ -400,6 +448,20 @@
           submitBtn.innerHTML = 'Submitting...';
 
           try {
+            // Client-side file validation check before submit
+            if (fileInput && fileInput.files.length > 0) {
+              const file = fileInput.files[0];
+              const allowedExtensions = ['dwg', 'dxf', 'step', 'stp', 'iges', 'igs', 'pdf', 'jpg', 'jpeg', 'png', 'webp'];
+              const ext = file.name.split('.').pop().toLowerCase();
+              if (!allowedExtensions.includes(ext) || file.size > 4 * 1024 * 1024) {
+                statusEl.textContent = 'Please fix the file attachment errors before submitting.';
+                statusEl.classList.add('text-industrial-red');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                return;
+              }
+            }
+
             const token = await new Promise((resolve, reject) => {
               grecaptcha.ready(function () {
                 grecaptcha.execute('6LeH1yYtAAAAAIStBJ7QE0rXiMXY9A4iQVV4RdJn', { action: 'quote' })
@@ -407,24 +469,26 @@
               });
             });
 
-            const payload = {
-              projectName: form.projectName.value,
-              serviceCategory: form.serviceCategory.value,
-              scopeOfWork: form.scopeOfWork.value,
-              materialType: form.materialType.value,
-              estimatedWeight: form.estimatedWeight.value,
-              desiredDeadline: form.desiredDeadline.value,
-              name: form.name.value,
-              company: form.company.value,
-              email: form.email.value,
-              phone: form.phone.value,
-              recaptchaToken: token,
-            };
+            const formData = new FormData();
+            formData.append('projectName', form.projectName.value);
+            formData.append('serviceCategory', form.serviceCategory.value);
+            formData.append('scopeOfWork', form.scopeOfWork.value);
+            formData.append('materialType', form.materialType.value);
+            formData.append('estimatedWeight', form.estimatedWeight.value);
+            formData.append('desiredDeadline', form.desiredDeadline.value);
+            formData.append('name', form.name.value);
+            formData.append('company', form.company.value);
+            formData.append('email', form.email.value);
+            formData.append('phone', form.phone.value);
+            formData.append('recaptchaToken', token);
+
+            if (fileInput && fileInput.files.length > 0) {
+              formData.append('attachment', fileInput.files[0]);
+            }
 
             const res = await fetch('/api/quote', {
               method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload),
+              body: formData,
             });
 
             const data = await res.json();
@@ -433,6 +497,10 @@
               statusEl.textContent = 'Quote request submitted — a specialist will contact you shortly.';
               statusEl.classList.add('text-green-600');
               form.reset();
+              if (fileNameDisplay) {
+                fileNameDisplay.textContent = defaultLabel;
+                fileNameDisplay.classList.remove('text-primary');
+              }
             } else {
               statusEl.textContent = data.error || 'Something went wrong. Please try again.';
               statusEl.classList.add('text-industrial-red');
@@ -450,6 +518,7 @@
         // Hover effect for inputs
         const inputs = document.querySelectorAll('input, select, textarea');
         inputs.forEach(input => {
+            if (input.type === 'file') return;
             input.addEventListener('focus', () => {
                 input.parentElement.querySelector('label').classList.replace('text-slate-gray', 'text-industrial-red');
             });
